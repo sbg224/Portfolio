@@ -1,0 +1,30 @@
+
+.projetG{
+    width: 80%;
+    margin: 15px auto;
+}
+.projetUl{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.projetList{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border: solid ;
+  border-radius: 5px;
+  .listText{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    
+  }
+  .listImgSrc{
+    width: 35rem;
+  }
+}

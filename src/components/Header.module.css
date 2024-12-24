@@ -1,0 +1,139 @@
+
+/* css module */
+.headerG {
+    background: 
+    linear-gradient(100deg, #9592dcc9 30%, #fcd489aa 50%, #88ee9eb4 70%),
+    linear-gradient(to top, #EAEAEA, transparent 90%);
+    background-blend-mode: overlay; 
+    min-height: 50vh;
+    width: 100%;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .navHeader{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 0.7rem;
+        .liNav{
+            display: flex;
+            gap: 1rem;
+            .iconinstagram{
+                font-size: 2rem;
+            }
+            .iconGitHub{
+                font-size: 2rem;
+            }
+            .iconlinkedin{
+                font-size: 2rem;
+            }
+        }
+    }
+    .PortfolioLogo{
+        font-size: 2rem;
+        text-decoration: none;
+        color: black;
+        transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+        transition: ease-in-out 0.2s;
+
+    }
+}
+.intro{
+    width: 50%;
+    padding: 2.5rem 0;
+    margin: 0 auto;
+    font-size: 1.5rem;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    background-color:#eaeaea38 ;
+    width: 35%;
+    height: 5vh;
+    /* padding:0 5px; */
+    margin: 0 auto;
+    margin-bottom:2.5rem;
+    border-radius: 10px;
+}
+.buttonBurger{
+  display: none;
+}
+
+/* pour les ecrans de taille moyennes */
+@media (max-width: 890px) {
+  .headerG{
+    width: 100%;
+    /* padding: 0;
+    border-radius: 5px; */
+  }
+  .ulNav {
+    display: none ;
+    transition: ease-in-out 0.5s;
+  }
+  .PortfolioLogo{
+    position: absolute;
+    right: 10px;
+    top: 0.5rem;
+    transition: transforme 0.2s;
+  }
+  .buttons{
+    flex-direction: column;
+    position: absolute;
+    top: 1rem;
+    /* left: 0.1rem; */
+    backdrop-filter: blur(10px);
+    height: 47vh;
+    width: 25%;
+    transition: ease-in-out 0.2s;
+    left: -230px;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .burgerMenue {
+    left: 0;
+    width: 25vw;
+    top: 0;
+    transition: all .5s;
+  }
+  .buttonBurger{
+    display: block;
+    position: absolute;
+    left: 0.2rem;
+    top: 0.4rem;
+    width: 40px;
+    height:30px;
+    font-size: 25px;
+    border-radius: 5px;
+    background: none;
+    cursor: pointer;
+    transition: all 1s ease-out;
+  }
+  .intro{
+    display: block;
+    position: absolute;
+    top: 10rem;
+    right: 8rem;
+    font-size: 16px;
+    height: 20px;
+  }
+
+}
+
+/* format mobile */
+@media (max-width: 600px){
+  .intro{
+    display: block;
+    position: absolute;
+    right: 4rem;
+  }
+  .burgerMenue {
+    left: 0;
+    width: 30vw;
+    top: 0;
+    transition: all .5s;
+  }
+}

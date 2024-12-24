@@ -1,0 +1,24 @@
+
+.button{
+  /* width: max-content; */
+  width: 7rem;
+  height: 35px;
+  font-size: 1.2rem;
+  border: none;
+  opacity: 0.5;
+  transition: all ease-in-out 0.3s;
+  border-radius: 10px;
+  background-color: #EAEAEA;
+  cursor: pointer;
+  &:hover{
+  opacity: 1;
+  transform: scale(1.1);
+  transition: transfom 0.1s  opacity 0.1s ;
+  }
+  &:focus{
+  background-color: #9492DC;
+  }
+}
+
+
+
