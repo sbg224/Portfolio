@@ -3,7 +3,7 @@
 .headerG {
     background: 
     linear-gradient(100deg, #9592dcc9 30%, #fcd489aa 50%, #88ee9eb4 70%),
-    linear-gradient(to top, #EAEAEA, transparent 90%);
+    linear-gradient(to top, #fff, transparent 100%);
     background-blend-mode: overlay; 
     min-height: 50vh;
     width: 100%;
@@ -20,23 +20,21 @@
             display: flex;
             gap: 1rem;
             .iconinstagram{
-                font-size: 2rem;
+                font-size: 1.7rem;
             }
             .iconGitHub{
-                font-size: 2rem;
+                font-size: 1.7rem;
             }
             .iconlinkedin{
-                font-size: 2rem;
+                font-size: 1.7rem;
             }
         }
     }
     .PortfolioLogo{
         font-size: 2rem;
-        text-decoration: none;
         color: black;
         transform: matrix(1.1, 0, 0, 1.1, 0, 0);
         transition: ease-in-out 0.2s;
-
     }
 }
 .intro{
@@ -103,7 +101,7 @@
     display: block;
     position: absolute;
     left: 0.2rem;
-    top: 0.4rem;
+    top: 0.6rem;
     width: 40px;
     height:30px;
     font-size: 25px;
@@ -116,7 +114,7 @@
     display: block;
     position: absolute;
     top: 10rem;
-    right: 8rem;
+    right: 9rem;
     font-size: 16px;
     height: 20px;
   }

@@ -1,7 +1,7 @@
 
 .projetG{
     width: 80%;
-    margin: 15px auto;
+    margin: 2rem auto;
 }
 .projetUl{
   display: flex;
@@ -14,17 +14,35 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  border: solid ;
-  border-radius: 5px;
+  border: solid white ;
+  border-radius: 8px;
+  background-color: #EAEAEA;
+  margin: 1.1rem 0;
   .listText{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    padding: 5px 0;
     
   }
   .listImgSrc{
-    width: 35rem;
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+}
+
+@media (max-width: 1250px){
+  .projetList{
+    display: flex;
+    flex-direction: column;
+  }
+  .listImgSrc{
+    width: 50%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    
   }
 }

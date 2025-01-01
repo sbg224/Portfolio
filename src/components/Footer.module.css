@@ -1,0 +1,26 @@
+
+
+.footerG{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(to bottom, #fff , #EAEAEA),linear-gradient(to bottom, #EAEAEA, transparent 100%);
+    height: 5vh;
+    padding: 0 10px;
+    .navFooter{
+        display: flex;
+        .liNavFooter{
+            display: flex;
+            gap: 1rem;
+            .iconinstagram{
+                font-size: 1.5rem;
+            }
+            .iconGitHub{
+                font-size: 1.5rem;
+            }
+            .iconlinkedin{
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

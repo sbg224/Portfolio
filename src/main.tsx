@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import App from './App.tsx'
 import HomePage from './pages/HomePage.tsx'
-import PlayGround from './pages/PlayGround.tsx'
+import Skils from './pages/Skils.tsx'
 import About from './pages/About.tsx'
 
 
@@ -17,8 +17,8 @@ const router = createBrowserRouter([
         element: <HomePage/>
       },
       {
-        path: '/playGround',
-        element: <PlayGround/>
+        path: '/skils',
+        element: <Skils/>
       },
       {
         path: '/about',

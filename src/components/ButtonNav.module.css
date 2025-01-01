@@ -1,23 +1,22 @@
 
-.button{
-  /* width: max-content; */
+.button {
   width: 7rem;
   height: 35px;
   font-size: 1.2rem;
   border: none;
-  opacity: 0.5;
-  transition: all ease-in-out 0.3s;
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
   border-radius: 10px;
   background-color: #EAEAEA;
   cursor: pointer;
-  &:hover{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
   opacity: 1;
   transform: scale(1.1);
-  transition: transfom 0.1s  opacity 0.1s ;
-  }
-  &:focus{
-  background-color: #9492DC;
-  }
+  background-color: #D4D4F5; /* Couleur légèrement différente */
+  box-shadow: 0 0 15px rgba(102, 153, 255, 0.8), 0 0 25px rgba(163, 255, 102, 0.6);
 }
 
 
