@@ -30,7 +30,9 @@ const handleSubmit= (e: React.FormEvent<HTMLFormElement>)=>{
     alert('Tous les champs sont obligatoires')
   return;
 }
-
+const serviceId = 'service_n23khuf'; 
+const templateId = 'template_ch7qhh9';
+const userId = 'PYfG0AhV0bjfzSYAj'
 
 setIsLoading(true)
 
