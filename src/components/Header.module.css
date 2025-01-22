@@ -3,7 +3,7 @@
 .headerG {
     background: 
     linear-gradient(100deg, #9592dcc9 30%, #fcd489aa 50%, #88ee9eb4 70%),
-    linear-gradient(to top, #fff, transparent 100%);
+    linear-gradient(to top, #62615d, transparent 100%);
     background-blend-mode: overlay; 
     min-height: 50vh;
     width: 100%;

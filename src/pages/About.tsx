@@ -15,7 +15,8 @@ telephone: '',
 message:''
 });
 
-const handleChange= (e)=>{
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+const handleChange= (e: { preventDefault: () => void; target: { name: any; value: any; }; })=>{
 e.preventDefault()
 const {name, value}= e.target;
 setDatas( (prevDatas) =>({

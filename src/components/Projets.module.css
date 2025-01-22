@@ -14,8 +14,8 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  border: solid white ;
-  border-radius: 8px;
+  border: solid #b9b0b0;
+  border-radius: 9px;
   background-color: #EAEAEA;
   margin: 1.1rem 0;
   .listText{
