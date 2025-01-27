@@ -1,11 +1,23 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    text-decoration: none;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	text-decoration: none;
 }
 
-body{
-    background: linear-gradient(to bottom, #62615d, transparent 100%);
+/* Définition des couleurs et dégradés pour les deux thèmes */
+:root {
+	--background-color: white;
+	--text-color: #fff;
+	--font-family: "Dennis Sans", sans-serif;
+	--gradient-light: linear-gradient(to bottom, #fff, transparent 100%);
+	--gradient-dark: linear-gradient(to bottom, #303030, transparent 100%);
+}
+
+
+
+body {
+	background-color: #ffffff;
+	height: 100%;
 }

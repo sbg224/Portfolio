@@ -12,7 +12,7 @@ height: 100vh;
   .Diplômes{
     border: solid #b9b0b0 2px;
     border-bottom-left-radius:15px;
-    width: 50%;
+    width: 60%;
     padding: 10px 10px;
     .liDiplome{
         display: flex;
@@ -25,7 +25,7 @@ height: 100vh;
   .Compétances{
     border: solid #b9b0b0 2px;
     border-top-right-radius: 15px ;
-    width: 50%;
+    width: 60%;
     padding: 10px 10px;
     .liCompétance{
       display: grid;

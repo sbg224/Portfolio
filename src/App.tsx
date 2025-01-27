@@ -1,20 +1,23 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import Header from './components/Header'
 import './App.css'
 import Footer from './components/Footer'
+import DarkModeContext from './context/DarkModeContext'
 
 
 function App() {
-
+  const [couleur, setCouleur] = useState("light")
 
   return (
     <>
-      <Header/>
-      <main>
-        <Outlet/>
-      </main>
-      <Footer/>
+      <DarkModeContext.Provider value={{ couleur, setCouleur }} >
+        <Header/>
+        <main>
+          <Outlet/>
+        </main>
+        <Footer/>
+      </DarkModeContext.Provider>
     </>
   )
 }

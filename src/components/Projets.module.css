@@ -1,4 +1,3 @@
-
 .projetG{
     width: 80%;
     margin: 2rem auto;
@@ -24,8 +23,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    padding: 5px 0;
-    
+    padding: 5px;
   }
   .listImgSrc{
     width: 100%;

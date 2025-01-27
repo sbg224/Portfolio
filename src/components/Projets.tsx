@@ -1,35 +1,59 @@
+import style from "./Projets.module.css";
+import { useGSAP } from "@gsap/react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-import { redirect } from 'react-router-dom'
-import style from './Projets.module.css'
-
-
-type myProjetsType ={  
-  myProjets:{
-      id: number;
-      name: string;
-      description: string;
-      imgSrc: string;
-      lien:string
+type myProjetsType = {
+  myProjets: {
+    id: number;
+    name: string;
+    description: string;
+    imgSrc: string;
+    lien: string;
   }[];
+};
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+function Projets({ myProjets }: myProjetsType) {
+	// const effeScroll = useRef<HTMLUListElement>(null);
+  // useEffect(() => {
+  //   if (effeScroll.current) { // Vérifie si l'élément est bien défini
+  //     const listItems = effeScroll.current.children;
+      
+  //     // Définir l'animation GSAP pour faire défiler les éléments horizontalement
+  //     gsap.to(listItems, {
+  //       x: "100%", // Déplace les éléments vers la droite
+  //       stagger: 0.1, // Décale légèrement chaque élément pour l'animation
+  //       duration: 2, // Durée de l'animation
+  //       repeat: -1, // Répète l'animation indéfiniment
+  //       ease: "none", // Utilise une courbe de transition linéaire pour un défilement constant
+  //     });
+  //   }
+  // }, []);
+
+	return (
+		<div className={style.projetG}>
+			<ul className={style.projetUl} >
+				{myProjets.map((myProjet) => (
+					<li key={myProjet.id} className={style.projetList}>
+						<img
+							src={myProjet.imgSrc}
+							alt={myProjet.name}
+							className={style.listImgSrc}
+						/>
+						<div className={style.listText}>
+							<h3>{myProjet.name}</h3>
+							<p>{myProjet.description}</p>
+							<a href={myProjet.lien}>En savoir plus</a>
+						</div>
+					</li>
+				))}
+			</ul>
+		</div>
+	);
 }
 
-function Projets({myProjets}:myProjetsType ){
-    return(
-        <div className={style.projetG}>
-            <ul className={style.projetUl}>
-                {myProjets.map((myProjet) =>(
-                  <li key={myProjet.id} className={style.projetList}>
-                    <img src={myProjet.imgSrc} alt={myProjet.name} className={style.listImgSrc} />
-                    <div className={style.listText} >
-                      <h3>{myProjet.name}</h3>
-                      <p>{myProjet.description}</p>
-                      <a href={myProjet.lien}>En savoir plus</a>
-                    </div>
-                  </li>
-                ) )}
-            </ul>
-        </div>
-    )
-}
-
-export default Projets
+export default Projets;
