@@ -42,27 +42,37 @@ function Header(){
     });
     if (Bienvenue.current) {
       const letters = Bienvenue.current.children;
-      gsap.from(
-        letters,
-        {
-          y: "20vh",
-          rotate: "365",
-          opacity: 0,
-          stagger: 0.1,
-          duration: 2,
-          // repeat: 1,
-          ease: "power2.out", // Utilisation d'un easing pour rendre l'animation plus fluide
-          // ScrollTrigger:{
-          //   trigger:letters,
-          //   start: "top 80%",
-          //   end: "bottom 10%",
-          //   scrub: true,
-          //   toggleActions: "play, reverse, restart",
-          // }
-        }
-      );
+
+      // Animation des lettres
+      const tl = gsap.timeline({ repeat: 1, yoyo: true });
+      tl.from(letters, {
+        y: "20vh",
+        rotate: "180deg",
+        opacity: 0,
+        stagger: 0.1,
+        duration: 1,
+        ease: "power2.out",
+      })
+      .to(letters, {
+        margin: "10px",
+        duration: 0.6,
+        ease: "power1.inOut",
+      })
+      .to(letters, {
+        margin: "0px",
+        duration: 0.6,
+        ease: "power1.inOut",
+      });
+
+      // ScrollTrigger pour les lettres
+      ScrollTrigger.create({
+        trigger: Bienvenue.current,
+        start: "top 80%",
+        end: "bottom 10%",
+        scrub: true,
+        toggleActions: "play reverse restart",
+      });
     }
-    
   }, []);
 
   return(
