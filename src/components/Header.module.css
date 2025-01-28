@@ -30,6 +30,7 @@
 		.liNav {
 			display: flex;
 			gap: 1rem;
+			/* cursor: pointer; */
 			.iconinstagram {
 				font-size: 1.7rem;
         color: #fff;
@@ -47,6 +48,7 @@
 	.PortfolioLogo {
 		font-size: 1rem;
 		color: #fff;
+		padding-left: .5rem;
 		font-weight: 100;
 		font-family: var(--font-family);
 		transform: matrix(1.1, 0, 0, 1.1, 0, 0);
@@ -73,14 +75,14 @@
   width: 250px;
   position: absolute;
   top: 30%;
-  right: 40%;
+  right: 45%;
   display: flex;
   opacity: 1;
 }
 .Arrow{
   position: absolute;
   top: 20%;
-  width: 60px;
+  width: 55px;
   transform: rotate(-35deg);
 }
 .presHeader{
@@ -90,7 +92,7 @@
   color: #fff;
   font-size: 1rem;
   font-weight: 100;
-  width: 250px;
+  width: 220px;
   padding-left: 10px;
 }
 .buttons {
@@ -98,9 +100,9 @@
 	align-items: center;
 	gap: 1rem;
 	/* background-color:#eaeaea38 ; */
-	width: 35%;
+	/* width: 35%; */
 	height: 5vh;
-	transform: translateX(80%);
+	transform: translateX(90%);
 }
 .buttonBurger {
 	display: none;

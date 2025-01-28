@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { useContext, useEffect, useRef, useState} from 'react';
+import { useEffect, useRef, useState} from 'react';
 import { Link } from 'react-router-dom';
 import ButtonNav from './ButtonNav';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -30,10 +30,11 @@ function Header(){
       scale: 0.5,
       opacity: 0,
       duration: 1,
+      delay: 1,
       ease: "power3.out",
       scrollTrigger: {
         trigger: introText.current,
-        start: "top 90%",
+        start: "top 110%",
         end: "bottom 10%",
         scrub: true,
         toggleActions: "play, reverse, restart",
@@ -42,36 +43,34 @@ function Header(){
     });
     if (Bienvenue.current) {
       const letters = Bienvenue.current.children;
-
       // Animation des lettres
-      const tl = gsap.timeline({ repeat: 1, yoyo: true });
+      const tl = gsap.timeline({ yoyo: true });
       tl.from(letters, {
         y: "20vh",
         rotate: "180deg",
         opacity: 0,
         stagger: 0.1,
-        duration: 1,
+        duration: .5,
         ease: "power2.out",
       })
       .to(letters, {
-        margin: "10px",
+        x: "40%",
         duration: 0.6,
         ease: "power1.inOut",
       })
       .to(letters, {
-        margin: "0px",
+        x: "0",
         duration: 0.6,
         ease: "power1.inOut",
       });
-
       // ScrollTrigger pour les lettres
-      ScrollTrigger.create({
-        trigger: Bienvenue.current,
-        start: "top 80%",
-        end: "bottom 10%",
-        scrub: true,
-        toggleActions: "play reverse restart",
-      });
+      // ScrollTrigger.create({
+      //   trigger: letters,
+      //   start: "top 80%",
+      //   end: "bottom 10%",
+      //   scrub: true,
+      //   toggleActions: "play reverse restart",
+      // });
     }
   }, []);
 

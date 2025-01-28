@@ -11,42 +11,68 @@
 .formName{
   display: flex;
   gap: 2.5rem;
-  input{
-      width: 200px;
+  .inputWrapper{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color:#EAEAEA;
+    padding: 0 5px;
+    input{
       height: 30px;
+      width: 100%;
       border-radius: 10px;
       border: none;
-      background-color:#EAEAEA;
-      padding: 0 5px;
-      &:hover{
-          border-bottom: solid #88EE9E 3px;
-      }
+      background: transparent;
+        &:hover{
+            border-bottom: solid #88EE9E 3px;
+        }
+    }
   }
 }
 .formEmailNumber{
   display: flex;
   gap: 2.5rem;
-  input{
-      width: 200px;
+  .inputWrapper{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color:#EAEAEA;
+    padding: 0 5px;
+    input{
       height: 30px;
+      width: 100%;
       border-radius: 10px;
       border: none;
-      background-color:#EAEAEA;
-      padding: 0 5px;
-      &:hover{
-          border-bottom: solid #88EE9E 3px;
-      }
+      background: transparent;
+        &:hover{
+            border-bottom: solid #88EE9E 3px;
+        }
+    }
+    input:focus{
+      background: none;
+    }
+    input:valid {
+      background: none;
+    }
   }
 }
 .formMessage{
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  .myMessage{
+    .myMessage{
       background-color:#EAEAEA;
       padding: 0 5px;
       border-radius: 10px;
-  }
+    }
 }
 .myButtonS{
     width: 130px;

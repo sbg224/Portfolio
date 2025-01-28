@@ -60,27 +60,29 @@ function HomePage() {
 		})
 	},[])
 
-	const handleNext = () => {
-		setProjetIndex((ProjetIndex) =>
-			ProjetIndex === TabProjets.length - 1 ? 0 : ProjetIndex + 1,
-		);
-	};
+	// const handleNext = () => {
+	// 	setProjetIndex((ProjetIndex) =>
+	// 		ProjetIndex === TabProjets.length - 1 ? 0 : ProjetIndex + 1,
+	// 	);
+	// };
 
-	// Fonction pour aller au Pokémon précédent
-	const handlePrevious = () => {
-		setProjetIndex((ProjetIndex) =>
-			ProjetIndex === 0 ? TabProjets.length - 1 : ProjetIndex - 1,
-		);
-	};
+	// // Fonction pour aller au Pokémon précédent
+	// const handlePrevious = () => {
+	// 	setProjetIndex((ProjetIndex) =>
+	// 		ProjetIndex === 0 ? TabProjets.length - 1 : ProjetIndex - 1,
+	// 	);
+	// };
+
 	return (
 		<div className={style.Carrousel}>
-			<button type="button" onClick={handlePrevious} ref={buttonCarrousel1} >
+			<Projets myProjets={TabProjets} />
+			{/* [TabProjets[ProjetIndex]] */}
+			{/* <button type="button" onClick={handlePrevious} ref={buttonCarrousel1} >
 				⇠
 			</button>
-			<Projets myProjets={[TabProjets[ProjetIndex]]} />
 			<button type="button" onClick={handleNext} ref={buttonCarrousel2} >
 				⇢
-			</button>
+			</button> */}
 		</div>
 	);
 }
