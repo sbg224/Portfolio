@@ -1,58 +1,123 @@
-.projetG{
-    width: 80%;
-    margin: 2rem auto;
-    font-family: var(--font-family);
-    line-height: 29.648px;
-    letter-spacing: normal;
+/* css Module */
+.projetG {
+	width: 80%;
+	margin: 2rem auto;
+	font-family: var(--font-family);
 }
-.projetUl{
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-.sectionProjet{
-  list-style: none;
-  display: flex;
-  gap: 0.5rem;
-  border-radius: 9px;
-  background-color:transparent;
-  backdrop-filter: blur(10px);
-  width: 80%;
-  margin: 4.8rem auto;
-  .listText{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 3rem;
-    padding: 5px;
-    h3 {
-      font-size: 35px;
-      width: 70%;
-    }
-  }
-  .listImgSrc{
+/* css des sections */
+.sectionProjet {
+	list-style: none;
+	display: flex;
+  justify-content: space-between;
+  align-items: center;
+	gap: 0.5rem;
+	border-top: solid 1px;
+	/* border-bottom: solid 1px; */
+	background-color: transparent;
+	backdrop-filter: blur(10px);
+	width: 90%;
+	margin: 2rem auto;
+	padding: 4rem 0;
+  .divContaiteur{
+    height: 100%;
     width: 100%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
   }
+		h3 {
+			font-size: 35px;
+      font-weight: 300;
+      line-height: 35px;
+      letter-spacing: normal;
+			width: 50%;
+      cursor: pointer;
+		}
+    /* a{
+      color: #000;
+    } */
+	}
+
+.viewDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border:none;
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+  transform: scale(1);
+  background: transparent;
+  color: #000;
+  opacity: 0.8;
+  position: relative; /* Nécessaire pour positionner les pseudo-éléments */
+  overflow: hidden; /* Empêche les pseudo-éléments de déborder */
+  transition: transform ease-in-out .2s, opacity ease-in-out .2s;
+  z-index: 1;
+}
+.viewDiv a {
+  color: inherit; /* Hérite de la couleur du parent div */
+  text-decoration: none; /* Supprime le soulignement des liens */
+  transition: color 0.3s ease-in-out; /* Transition sur la couleur des liens */
+  z-index: 2; /* Le lien a un z-index plus élevé pour qu'il soit au-dessus du fond */
+  position: relative;
 }
 
-.lineStyle{
-  background-color: #000;
-  width:90%;
-  margin: 2rem auto;
-  height: 1px;
+.viewDiv::before {
+  content: '';
+  position: absolute;
+  top: 100%; /* Commence en bas */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #26474e; /* Couleur de fond de l'effet */
+  transition: top 0.5s ease-out;
 }
 
-@media (max-width: 1250px){
-  .projetList{
-    display: flex;
-    flex-direction: column;
-  }
-  .listImgSrc{
-    width: 50%;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    
-  }
+.viewDiv:hover {
+  opacity: 1;
+  transform: scale(1.2);
+  backdrop-filter: blur(6px);
+}
+
+.viewDiv:hover a {
+  color: white;
+}
+
+.viewDiv:hover::before {
+  top: 0; /* Le fond bleu se déplace vers le haut */
+}
+
+.viewDiv::after {
+  content: '';
+  position: absolute;
+  top: 100%; /* Commence en bas */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #26474e;
+  opacity: 0; /* Commence invisible */
+  transition: top 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.viewDiv:hover::after {
+  top: 0;
+  opacity: 0.3; /* La vague devient visible au survol */
+}
+
+
+	.listImgSrc {
+		width: 100%;
+		border-top-left-radius: 8px;
+		border-bottom-left-radius: 8px;
+	}
+
+/* responsive */
+@media (max-width: 1250px) {
+	.projetList {
+		display: flex;
+		flex-direction: column;
+	}
+	.listImgSrc {
+		width: 50%;
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+	}
 }
