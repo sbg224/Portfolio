@@ -1,16 +1,15 @@
-
-.aboutG{
-    width: 50%;
-    margin: 0 auto;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    justify-content: flex-start;
-    .titleText{
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-        margin: 3rem 0;
-    }
+.aboutG {
+	width: 50%;
+	margin: 0 auto;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	/* align-items: center; */
+	justify-content: flex-start;
+	.titleText {
+		display: flex;
+		flex-direction: column;
+		gap: 0.8rem;
+		margin: 3rem 0;
+	}
 }

@@ -38,27 +38,27 @@ const TabProjets = [
 function HomePage() {
 	const [ProjetIndex, setProjetIndex] = useState(0);
 
-	const buttonCarrousel1 = useRef<HTMLButtonElement>(null)
-	const buttonCarrousel2 = useRef<HTMLButtonElement>(null)
+	const buttonCarrousel1 = useRef<HTMLButtonElement>(null);
+	const buttonCarrousel2 = useRef<HTMLButtonElement>(null);
 
-	const tl = gsap.timeline()
+	const tl = gsap.timeline();
 
 	useGSAP(() => {
 		tl.to(buttonCarrousel1.current, {
-			x:"10px",
+			x: "10px",
 			scale: 1.3,
-			duration:.6,
+			duration: 0.6,
 			yoyo: true,
 			repeat: -1,
-		})
+		});
 		tl.to(buttonCarrousel2.current, {
-			x:"-10px",
+			x: "-10px",
 			scale: 1.1,
-			duration:.6,
+			duration: 0.6,
 			yoyo: true,
 			repeat: -1,
-		})
-	},[])
+		});
+	}, []);
 
 	// const handleNext = () => {
 	// 	setProjetIndex((ProjetIndex) =>

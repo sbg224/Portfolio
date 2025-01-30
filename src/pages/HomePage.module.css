@@ -1,9 +1,9 @@
-.Carrousel{
-  display: flex;
-  button{
-    width: 100px;
-    background: none;
-    border: none;
-    font-size: 30px;
-  }
+.Carrousel {
+	display: flex;
+	button {
+		width: 100px;
+		background: none;
+		border: none;
+		font-size: 30px;
+	}
 }

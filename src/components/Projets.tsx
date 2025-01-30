@@ -27,21 +27,23 @@ function Projets({ myProjets }: myProjetsType) {
 		setIsHovered(false);
 	};
 
-	// const effeScroll = useRef<HTMLUListElement>(null);
-	// useEffect(() => {
-	//   if (effeScroll.current) { // Vérifie si l'élément est bien défini
-	//     const listItems = effeScroll.current.children;
+	const pageTransit = useRef<HTMLDivElement>(null);
+	useEffect(() => {
+		if (pageTransit.current) {
+			// Vérifie si l'élément est bien défini
+			const listItems = pageTransit.current.children;
 
-	//     // Définir l'animation GSAP pour faire défiler les éléments horizontalement
-	//     gsap.to(listItems, {
-	//       x: "100%", // Déplace les éléments vers la droite
-	//       stagger: 0.1, // Décale légèrement chaque élément pour l'animation
-	//       duration: 2, // Durée de l'animation
-	//       repeat: -1, // Répète l'animation indéfiniment
-	//       ease: "none", // Utilise une courbe de transition linéaire pour un défilement constant
-	//     });
-	//   }
-	// }, []);
+			gsap.to(listItems, {
+				x: "100%",
+				backgroundColor: "red", // Déplace les éléments vers la droite
+				stagger: 0.1, // Décale légèrement chaque élément pour l'animation
+				duration: 2, // Durée de l'animation
+				repeat: -1, // Répète l'animation indéfiniment
+				ease: "none",
+				scrollTrigger: {}, // Utilise une courbe de transition linéaire pour un défilement constant
+			});
+		}
+	}, []);
 
 	return (
 		<div className={style.projetG}>
@@ -57,11 +59,13 @@ function Projets({ myProjets }: myProjetsType) {
 					onBlur={handleMouseLeave}
 				>
 					{!isHovered ? (
-						<h3>
-							{myProjets[0].name}
-						</h3>
+						<h3>{myProjets[0].name}</h3>
 					) : (
-						<img src={myProjets[0]?.imgSrc} alt={myProjets[0].description} />
+						<img
+							className={style.listImgSrc}
+							src={myProjets[0]?.imgSrc}
+							alt={myProjets[0].description}
+						/>
 					)}
 				</div>
 				<div className={style.viewDiv}>
