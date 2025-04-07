@@ -1,21 +1,234 @@
+/* RecentProjets.module.css */
 .recentPG {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: 80%;
+  width: 90%;
+  max-width: 1200px;
   margin: 5rem auto;
-  height: 30vh;
+}
+
+.recentPG h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4rem;
+}
+
+.carouselContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.recentPUl {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transition: transform 0.5s ease-in-out;
+  width: fit-content;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px; /* Largeur fixe pour chaque carte */
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  overflow: hidden;
+  margin-right: 2rem;
+}
+
+.projectCard:last-child {
+  margin-right: 0;
+}
+
+.projectCard.expanded {
+  height: auto !important;
+}
+
+.projectCard h3 {
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-bottom: 0;
+  color: #333;
+}
+
+.projectImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.projectInfo {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.projectTechnologies {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.descriptionContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.projetDescription {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  max-height: 70px; /* Hauteur initiale de la description */
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.projectCard.expanded .projetDescription {
+  max-height: none;
+}
+
+.seeMoreButton {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.projetLink {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1; 
+}
+
+.projetLink::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #26474e;
+  transition: width 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.projetLink:hover {
+  color: white;
+}
+
+.projetLink:hover::after {
+  width: 100%; 
+}
+
+.carouselButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #555;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 10;
+  transition: color 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carouselButton:hover {
+  color: #007bff;
+}
+
+.carouselButton.prev {
+  left: 0;
+}
+
+.carouselButton.next {
+  right: 0;
+}
+
+.carouselDots {
+  position: absolute;
+  bottom: .0rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.carouselDot {
+  background-color: #ccc;
+  border: none;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carouselDot.active {
+  background-color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .recentPG {
+    width: 95%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
   .recentPUl {
-    display: flex;
-    .recentPLi {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      .recentPImgSrc {
-        width: 20rem;
-        border-top-left-radius: 8px;
-        border-bottom-left-radius: 8px;
-      }
-    }
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: fit-content;
+  }
+
+  .projectCard {
+    width: 80vw;
+    margin-right: 1rem;
+    max-width: none;
+  }
+
+  .carouselButton {
+    font-size: 1.2rem;
+  }
+
+  .carouselDots {
+    bottom: 0.5rem;
   }
 }

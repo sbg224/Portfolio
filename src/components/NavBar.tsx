@@ -39,7 +39,7 @@ function NavBar() {
 					<ButtonNav
 						handleChange={myButtonA}
 						path="/about"
-						name="About"
+						name="Contact"
 						color="#88EE9E"
 					/>
 				</div>

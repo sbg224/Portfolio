@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import style from "./Header.module.css";
 import Arrow from "../assets/Group 157.svg";
+import profile from "../assets/profile-boss.png";
 import NavBar from "./NavBar";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,15 +15,15 @@ gsap.registerPlugin(ScrollTrigger);
 function Header() {
   const { showNav, setShowNav } = useContext(ShowModeContext);
   const [showHeader, setShowHeader] = useState(false);
-  const [playGsap, setPlayGsap] = useState(true);
 
-  //leins pour les annimations GSAP
+  // Références pour les animations GSAP
   const introText = useRef<HTMLParagraphElement>(null);
   const Bienvenue = useRef<HTMLParagraphElement>(null);
   const pageTransit = useRef<HTMLDivElement>(null);
   const textContainer = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const hasAnimated = localStorage.getItem('hasAnimated');
     const page = pageTransit.current;
     const texts = textContainer.current?.children;
 
@@ -33,9 +34,12 @@ function Header() {
       return;
     }
 
-    if (page && texts && playGsap) {
+    if (page && texts && !hasAnimated) {
       const tl = gsap.timeline({
-        onComplete: () => setShowHeader(true), // Afficher le header après l'animation
+        onComplete: () => {
+          setShowHeader(true);
+          localStorage.setItem('hasAnimated', 'true'); // Marquer l'animation comme jouée
+        },
       });
 
       // Animation des textes en cascade
@@ -53,9 +57,10 @@ function Header() {
       )
         .to(texts, { opacity: 0, y: -20, stagger: 0.2, duration: 0.3 }, "+=1")
         .to(page, { y: "-100%", duration: 1, ease: "power3.inOut" });
+    } else if (hasAnimated) {
+      setShowHeader(true); // Si l'animation a déjà été jouée, afficher directement le header
     }
-    setPlayGsap(false);
-  }, [playGsap]);
+  }, []);
 
   useGSAP(() => {
     gsap.from(introText.current, {
@@ -84,7 +89,7 @@ function Header() {
         opacity: 0,
         stagger: 0.1,
         duration: 0.5,
-        delay: 5,
+        delay: 3,
         ease: "power2.out",
       })
         .to(letters, {
@@ -116,13 +121,14 @@ function Header() {
         <div>o</div>
         <div>!</div>
         {/* <div>m</div>
-				<div>e</div> */}
+        <div>e</div> */}
       </p>
       <img src={Arrow} alt="Arrière plan" className={style.Arrow} />
       <p className={style.presHeader}>
         “Hello, I’m Mohamed BAH, a Full-Stack Developer. I’m 22 years old and
         based in Toulouse.”
       </p>
+      <img src={profile} alt="Arrière plan" className={style.profile} />
       <p className={style.intro} ref={introText}>
         Développeur web en formation, passionné par la création de solutions
         modernes et adaptatives. À la recherche d’une alternance pour développer

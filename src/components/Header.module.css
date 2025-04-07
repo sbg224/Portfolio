@@ -4,8 +4,8 @@
     linear-gradient(100deg, #D4D3DC 30%, #EEE6D8 50%, #7b7e7cb4 70%),
     linear-gradient(to top, #BED3C3, transparent 100%);
     background-blend-mode: overlay;  */
-	/* background-color: #26474e; */
-	background-image: url("../assets/profile-Bgi2.png");
+	background-color: #26474e;
+	/* background-image: url("../assets/profile-Bgi2.png"); */
 	background-size: cover;
 	background-attachment: fixed; /* Effet de parallaxe */
 	background-position: center;
@@ -23,6 +23,18 @@
 	justify-content: space-between;
 	/* z-index: -1; */
 }
+.profile {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.9;
+  z-index: -1;
+  pointer-events: none;
+}
+
 
 .intro {
 	position: absolute;

@@ -26,7 +26,7 @@
 			border: none;
 			background: transparent;
 			&:hover {
-				border-bottom: solid #88ee9e 3px;
+				border-bottom: solid #26474e 3px;
 			}
 		}
 	}
@@ -51,7 +51,7 @@
 			border: none;
 			background: transparent;
 			&:hover {
-				border-bottom: solid #88ee9e 3px;
+				border-bottom: solid #26474e 3px;
 			}
 		}
 		input:focus {
@@ -80,7 +80,7 @@
 	background-color: #eaeaea;
 	padding: 0 5px;
 	&:hover {
-		border-bottom: solid #88ee9e 3px;
+		border-bottom: solid #26474e 3px;
 		transform: scale(0.9);
 		transition: all 0.3s;
 	}

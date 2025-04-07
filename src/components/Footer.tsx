@@ -15,10 +15,10 @@ function Footer() {
 						Merci de votre visite !
 					</p>
 				</div>
-				<div className={style.constct}>
+				{/* <div className={style.constct}>
 					<a className={style.emailC} href="mailto:sambah450@gmail.com">My email : sambah450@gmail.com</a>
 					<a className={style.tel} href="tel:mailto:+33751044407">My tel : +33751044407</a>
-				</div>
+				</div> */}
 			</div>
 			<div className={style.contianerFooter2}>
 				<p>&copy; 2024 BAH Mohamed. Tous droits réservés.</p>

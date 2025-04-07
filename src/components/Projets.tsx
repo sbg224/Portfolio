@@ -6,7 +6,6 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import RecentProjets from "./RecentProjets";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 function Projets() {
@@ -96,11 +95,21 @@ function Projets() {
               onBlur={() => handleMouseLeave(index)}
             >
               <h3>{projet.name}</h3>
-              <img
-                className={style.listImgSrc}
-                src={projet.imgSrc}
-                alt={projet.description}
-              />
+              {projet.lien.includes("github") ? (
+                <img
+                  className={style.listImgSrc}
+                  src={projet.imgSrc}
+                  alt={projet.description}
+                />
+              ) : (
+                <iframe
+                  className={style.listImgSrc}
+                  src={projet.lien}
+                  title="my portfolio"
+                >
+                  my portfolio
+                </iframe>
+              )}
             </div>
             <div className={style.viewDiv}>
               <a href={projet.lien} target="_blank" rel="noopener noreferrer">

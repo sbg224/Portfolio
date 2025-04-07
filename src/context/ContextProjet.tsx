@@ -6,6 +6,7 @@ type myProjetsType = {
 		description: string;
 		imgSrc: string;
 		lien: string;
+		technologies: string[];
 };
 
 const TabProjets: myProjetsType [] = [
@@ -16,7 +17,8 @@ const TabProjets: myProjetsType [] = [
 			"Dans le cadre de notre formation, nous avons travaillé sur plusieurs projets, dont l’un où j’ai eu l’opportunité d’apporter ma contribution. J’étais responsable de la création de la page Culture pour une agence de tourisme fictive. Ce projet m’a permis de mettre en pratique mes compétences en HTML, CSS et JavaScript pour développer une interface fluide et interactive. Pour la collaboration en équipe et la gestion des versions, nous avons utilisé GitHub, ce qui nous a permis de suivre l’évolution du projet et de travailler efficacement à plusieurs. Ce projet a été une excellente occasion de renforcer mes compétences techniques tout en collaborant de manière structurée.Dans le cadre de notre formation nous etions amené a effectué plusieurs projet dont celui-ci dans lequel j'ai puis apporter ma contribution j'etais charger de réaliser la page Culture d'une agence de tourisme fictive ",
 		imgSrc:
 			"https://img.freepik.com/photos-gratuite/belle-fleur-unique-gouttelettes-eau-refletant-couleurs-generees-par-ia_188544-15542.jpg?ga=GA1.1.2058682870.1734466195&semt=ais_hybrid",
-		lien: "https://github.com/Luigi-44/Projet1Wildcity.git", // Lien vers le projet
+		lien: "https://github.com/Luigi-44/Projet1Wildcity.git",
+		technologies: ["HTML", "CSS", "JavaScript", "TypeScript"], // Lien vers le projet
 	},
 	{
 		id: 1,
@@ -26,6 +28,7 @@ const TabProjets: myProjetsType [] = [
 		imgSrc:
 			"https://img.freepik.com/photos-gratuite/belle-fleur-unique-gouttelettes-eau-refletant-couleurs-generees-par-ia_188544-15542.jpg?ga=GA1.1.2058682870.1734466195&semt=ais_hybrid",
 		lien: "https://github.com/sbg224/AstroMatch.git", // Lien vers le projet
+		technologies: ["React", "CSS", "JavaScript", "TypeScript"],
 	},
 	{
 		id: 2,
@@ -34,7 +37,8 @@ const TabProjets: myProjetsType [] = [
 			"Mon portfolio présente mes compétences et projets en développement web et web mobile. Réalisé avec HTML, CSS, JavaScript et React, il inclut une présentation de mes réalisations, mes compétences techniques et une page de contact. Ce projet met en avant ma capacité à créer un site web complet et fonctionnel. ",
 		imgSrc:
 			"https://img.freepik.com/photos-gratuite/belle-fleur-unique-gouttelettes-eau-refletant-couleurs-generees-par-ia_188544-15542.jpg?ga=GA1.1.2058682870.1734466195&semt=ais_hybrid",
-		lien: "https://github.com/sbg224/Portfolio.git", // Lien vers le projet
+		lien: "https://portfolio-pied-kappa-95.vercel.app/", // Lien vers le projet
+		technologies: ["React", "CSS", "JavaScript", "TypeScript", "GSAP"],
 	},
 ];
 // Définir un type pour l'état du contexte
