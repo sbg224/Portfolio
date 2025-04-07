@@ -1,0 +1,21 @@
+.recentPG {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 80%;
+  margin: 5rem auto;
+  height: 30vh;
+  .recentPUl {
+    display: flex;
+    .recentPLi {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      .recentPImgSrc {
+        width: 20rem;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+      }
+    }
+  }
+}

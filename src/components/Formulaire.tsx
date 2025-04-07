@@ -1,4 +1,4 @@
-import { FaUser, FaEnvelope, FaPhone, FaComment } from "react-icons/fa";
+import { FaUser, FaEnvelope, FaPhone } from "react-icons/fa";
 import style from "./Formulaire.module.css";
 
 type formulairetype = {

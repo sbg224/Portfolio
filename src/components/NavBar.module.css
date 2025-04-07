@@ -1,0 +1,79 @@
+.navHeader {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 0 0.7rem;
+	background-color: #26474e;
+	z-index: -1;
+	.liNav {
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+		/* cursor: pointer; */
+		.iconinstagram {
+			font-size: 1.7rem;
+			color: #fff;
+		}
+		.iconGitHub {
+			font-size: 1.7rem;
+			color: #fff;
+		}
+		.iconlinkedin {
+			font-size: 1.7rem;
+			color: #fff;
+		}
+	}
+}
+
+.PortfolioLogo {
+	font-size: 1rem;
+	color: #fff;
+	padding-left: .5rem;
+	font-weight: 100;
+	font-family: var(--font-family);
+	transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+	transition: ease-in-out 0.2s;
+}
+
+.buttons {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	/* background-color:#eaeaea38 ; */
+	/* width: 35%; */
+	height: 5vh;
+	transform: translateX(90%);
+}
+
+.buttonBurger {
+	display: none;
+}
+
+/* pour les ecrans de taille moyennes */
+@media (max-width: 890px) {
+	.ulNav {
+		display: none;
+		transition: ease-in-out 0.5s;
+	}
+	.PortfolioLogo {
+		position: absolute;
+		right: 10px;
+		top: 0.5rem;
+		transition: transforme 0.2s;
+	}
+	.buttons {
+		flex-direction: column;
+		position: absolute;
+		top: 1rem;
+		/* left: 0.1rem; */
+		backdrop-filter: blur(10px);
+		height: 47vh;
+		width: 25%;
+		transition: ease-in-out 0.2s;
+		left: -230px;
+		justify-content: center;
+		gap: 1.5rem;
+	}
+
+}

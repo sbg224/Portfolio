@@ -9,7 +9,7 @@ type myButtonType = {
 	color: string;
 };
 
-function ButtonNav({ handleChange, path, name, color }: myButtonType) {
+function ButtonNav({ handleChange, path, name}: myButtonType) {
 	return (
 		<div>
 			<button

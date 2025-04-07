@@ -21,40 +21,9 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	.navHeader {
-		display: flex;
-		align-items: center;
-		flex-direction: row;
-		justify-content: space-between;
-		padding: 0 0.7rem;
-		.liNav {
-			display: flex;
-			gap: 1rem;
-			/* cursor: pointer; */
-			.iconinstagram {
-				font-size: 1.7rem;
-				color: #fff;
-			}
-			.iconGitHub {
-				font-size: 1.7rem;
-				color: #fff;
-			}
-			.iconlinkedin {
-				font-size: 1.7rem;
-				color: #fff;
-			}
-		}
-	}
-	.PortfolioLogo {
-		font-size: 1rem;
-		color: #fff;
-		padding-left: .5rem;
-		font-weight: 100;
-		font-family: var(--font-family);
-		transform: matrix(1.1, 0, 0, 1.1, 0, 0);
-		transition: ease-in-out 0.2s;
-	}
+	/* z-index: -1; */
 }
+
 .intro {
 	position: absolute;
 	transform: translateX(80%);
@@ -115,7 +84,7 @@
 	justify-content: center;
 	align-items: center;
 	background-color: black;
-	/* z-index: -1; */
+	z-index: 1;
 	p {
 		font-size: 50px;
 		color: #fff;

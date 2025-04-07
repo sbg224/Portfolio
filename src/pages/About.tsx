@@ -3,6 +3,7 @@ import emailjs from "emailjs-com";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import style from "./About.module.css";
 import Formulaire from "../components/Formulaire";
+import NavBar from "../components/NavBar";
 
 function About() {
 	const [isLoading, setIsLoading] = useState(false);
@@ -17,6 +18,7 @@ function About() {
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	const handleChange = (e: {
 		preventDefault: () => void;
+		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 		target: { name: any; value: any };
 	}) => {
 		e.preventDefault();
@@ -82,23 +84,26 @@ function About() {
 	};
 
 	return (
-		<div className={style.aboutG}>
-			<div className={style.titleText}>
-				<h2>A propos</h2>
-				<p>
-					Développeur web en reconversion, je conçois des solutions modernes et
-					accessibles avec HTML, CSS, JavaScript et React. Curieux et motivé, je
-					suis toujours prêt à relever de nouveaux défis et à collaborer sur des
-					projets innovants.
-				</p>
+		<>
+			<NavBar />
+			<div className={style.aboutG}>
+				<div className={style.titleText}>
+					<h2>A propos</h2>
+					<p>
+						Développeur web en reconversion, je conçois des solutions modernes
+						et accessibles avec HTML, CSS, JavaScript et React. Curieux et
+						motivé, je suis toujours prêt à relever de nouveaux défis et à
+						collaborer sur des projets innovants.
+					</p>
+				</div>
+				<Formulaire
+					handleChange={handleChange}
+					datas={datas}
+					handleSubmit={handleSubmit}
+					isLoading={isLoading}
+				/>
 			</div>
-			<Formulaire
-				handleChange={handleChange}
-				datas={datas}
-				handleSubmit={handleSubmit}
-				isLoading={isLoading}
-			/>
-		</div>
+		</>
 	);
 }
 

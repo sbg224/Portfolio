@@ -1,94 +1,120 @@
 import style from "./Projets.module.css";
-import { useGSAP } from "@gsap/react";
 import { useEffect, useRef, useState } from "react";
+import { useContext } from "react";
+import { MyArryContext } from "../context/ContextProjet";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import RecentProjets from "./RecentProjets";
 
-type myProjetsType = {
-	myProjets: {
-		id: number;
-		name: string;
-		description: string;
-		imgSrc: string;
-		lien: string;
-	}[];
-};
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Projets({ myProjets }: myProjetsType) {
-	const [isHovered, setIsHovered] = useState(false);
+function Projets() {
+  const myProjetsContext = useContext(MyArryContext);
+  if (!myProjetsContext) {
+    throw new Error(
+      "Le contexte MyArryContext doit être utilisé dans un MyArryProvider"
+    );
+  }
+  const { ProjetIndex } = myProjetsContext;
 
-	const handleMouseEnter = () => {
-		setIsHovered(true);
-	};
+  const [isHovered, setIsHovered] = useState<{ [key: number]: boolean }>({
+    0: false,
+    1: false,
+    2: false,
+  });
+  console.log(isHovered);
 
-	const handleMouseLeave = () => {
-		setIsHovered(false);
-	};
+  const handleMouseEnter = (index: number) => {
+    setIsHovered((prevState) => ({ ...prevState, [index]: true }));
+  };
 
-	const pageTransit = useRef<HTMLDivElement>(null);
-	useEffect(() => {
-		if (pageTransit.current) {
-			// Vérifie si l'élément est bien défini
-			const listItems = pageTransit.current.children;
+  const handleMouseLeave = (index: number) => {
+    setIsHovered((prevState) => ({ ...prevState, [index]: false }));
+  };
 
-			gsap.to(listItems, {
-				x: "100%",
-				backgroundColor: "red", // Déplace les éléments vers la droite
-				stagger: 0.1, // Décale légèrement chaque élément pour l'animation
-				duration: 2, // Durée de l'animation
-				repeat: -1, // Répète l'animation indéfiniment
-				ease: "none",
-				scrollTrigger: {}, // Utilise une courbe de transition linéaire pour un défilement constant
-			});
-		}
-	}, []);
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-	return (
-		<div className={style.projetG}>
-			<h2> Mes projets</h2>
-			{/* Mes section pour chaque projet */}
-			{/* 1er section */}
-			<section className={style.sectionProjet}>
-				<div
-					className={style.divContaiteur}
-					onMouseEnter={handleMouseEnter}
-					onMouseLeave={handleMouseLeave}
-					onFocus={handleMouseEnter}
-					onBlur={handleMouseLeave}
-				>
-					{!isHovered ? (
-						<h3>{myProjets[0].name}</h3>
-					) : (
-						<img
-							className={style.listImgSrc}
-							src={myProjets[0]?.imgSrc}
-							alt={myProjets[0].description}
-						/>
-					)}
-				</div>
-				<div className={style.viewDiv}>
-					<a href={myProjets[0].lien}>View more</a>
-				</div>
-			</section>
-			{/* 2er section */}
-			<section className={style.sectionProjet}>
-				<h3>{myProjets[1].name}</h3>
-				<div className={style.viewDiv}>
-					<a href={myProjets[1].lien}>View more</a>
-				</div>
-			</section>
-			{/* 3er section */}
-			<section className={style.sectionProjet}>
-				<h3>{myProjets[2].name}</h3>
-				<div className={style.viewDiv}>
-					<a href={myProjets[2].lien}>View more</a>
-				</div>
-			</section>
-			<div className={style.lineStyle}> </div>
-		</div>
-	);
+  useEffect(() => {
+    // Créer un tableau de refs si nécessaire
+    if (sectionRefs.current.length !== ProjetIndex.length) {
+      sectionRefs.current = Array(ProjetIndex.length).fill(null);
+    }
+
+    // Configurer les animations GSAP pour chaque section
+    for (let i = 0; i < sectionRefs.current.length; i++) {
+      const section = sectionRefs.current[i];
+      if (section) {
+        gsap.fromTo(
+          section,
+          {
+            opacity: 0,
+            y: 50,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            delay: i * 0.1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse",
+              markers: true,
+            },
+          }
+        );
+      }
+    }
+
+    return () => {
+      const triggers = ScrollTrigger.getAll();
+      for (const trigger of triggers) {
+        trigger.kill();
+      }
+    };
+  }, [ProjetIndex]);
+
+  return (
+    <div className={style.projetG}>
+      <h2>Mes projets</h2>
+      {/* Mes section pour chaque projet */}
+      {/* 1er section */}
+      {ProjetIndex.map((projet, index) => {
+        const setRef = (el: HTMLDivElement | null) => {
+          sectionRefs.current[index] = el;
+        };
+        return (
+          <section key={projet.id} className={style.sectionProjet} ref={setRef}>
+            <div
+              className={style.divContaiteur}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={() => handleMouseLeave(index)}
+              onFocus={() => handleMouseEnter(index)}
+              onBlur={() => handleMouseLeave(index)}
+            >
+              <h3>{projet.name}</h3>
+              <img
+                className={style.listImgSrc}
+                src={projet.imgSrc}
+                alt={projet.description}
+              />
+            </div>
+            <div className={style.viewDiv}>
+              <a href={projet.lien} target="_blank" rel="noopener noreferrer">
+                View more
+              </a>
+            </div>
+          </section>
+        );
+      })}
+      <div>
+        <RecentProjets />
+      </div>
+    </div>
+  );
 }
 
 export default Projets;
