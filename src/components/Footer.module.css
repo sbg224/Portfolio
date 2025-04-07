@@ -86,3 +86,75 @@
 	height: 10vh;
 	overflow: hidden;
 } */
+ /* 🎯 Responsive */
+
+@media (max-width: 768px) {
+	.footerG {
+		.containerFooter1 {
+			gap: 2rem;
+
+			.constct {
+				flex-direction: column;
+				align-items: flex-start;
+				height: auto;
+
+				.emailC,
+				.tel {
+					width: 100%;
+					max-width: 300px;
+				}
+			}
+		}
+
+		.containerFooter2 {
+			flex-direction: column;
+			gap: 1rem;
+			height: auto;
+			padding: 1rem 0;
+
+			.navFooter .liNavFooter {
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.footerG {
+		.containerFooter1 {
+			.profilfooter {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+
+				.profilCImg {
+					width: 100px;
+				}
+			}
+
+			.constct {
+				align-items: center;
+
+				.emailC,
+				.tel {
+					font-size: 0.9rem;
+				}
+			}
+		}
+
+		.containerFooter2 {
+			.navFooter .liNavFooter {
+				flex-direction: column;
+				gap: 0.5rem;
+
+				.iconinstagram,
+				.iconGitHub,
+				.iconlinkedin {
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+}

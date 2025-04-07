@@ -27,3 +27,42 @@
 		}
 	}
 }
+
+/* -------------------------------------------------------------------------- */
+/* Media Queries                               */
+/* -------------------------------------------------------------------------- */
+
+/* Pour les écrans de taille tablette (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .aboutG {
+    width: 95%; 
+    margin: 1.5rem auto; 
+    padding: 1rem; 
+  }
+
+  .titleText {
+    margin: 1.5rem 0; 
+  }
+}
+
+/* Pour les écrans de taille mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .aboutG {
+    width: 98%; 
+    margin: 1rem auto; 
+    min-height: 80vh; 
+    padding: 0.5rem; 
+  }
+
+  .titleText {
+    gap: 0.5rem; 
+    margin: 1rem 0; 
+  }
+}
+
+/* Pour les écrans très petits (max-width: 480px) */
+@media (max-width: 480px) {
+  .aboutG {
+    width: 100%; 
+  }
+}

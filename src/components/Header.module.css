@@ -102,12 +102,11 @@
 		color: #fff;
 	}
 }
+
 /* pour les ecrans de taille moyennes */
 @media (max-width: 890px) {
 	.headerG {
 		width: 100%;
-		/* padding: 0;
-    border-radius: 5px; */
 	}
 	.ulNav {
 		display: none;
@@ -123,7 +122,6 @@
 		flex-direction: column;
 		position: absolute;
 		top: 1rem;
-		/* left: 0.1rem; */
 		backdrop-filter: blur(10px);
 		height: 47vh;
 		width: 25%;
@@ -132,25 +130,7 @@
 		justify-content: center;
 		gap: 1.5rem;
 	}
-	.burgerMenue {
-		left: 0;
-		width: 25vw;
-		top: 0;
-		transition: all .5s;
-	}
-	.buttonBurger {
-		display: block;
-		position: absolute;
-		left: 0.2rem;
-		top: 0.6rem;
-		width: 40px;
-		height: 30px;
-		font-size: 25px;
-		border-radius: 5px;
-		background: none;
-		cursor: pointer;
-		transition: all 1s ease-out;
-	}
+
 	.intro {
 		display: block;
 		position: absolute;
@@ -161,17 +141,108 @@
 	}
 }
 
-/* format mobile */
-@media (max-width: 600px) {
-	.intro {
-		display: block;
-		position: absolute;
-		right: 4rem;
-	}
-	.burgerMenue {
-		left: 0;
-		width: 30vw;
-		top: 0;
-		transition: all .5s;
-	}
+
+
+/* -------------------------------------------------------------------------- */
+/* Media Queries                               */
+/* -------------------------------------------------------------------------- */
+
+/* Pour les écrans de taille tablette (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .headerG {
+    height: auto; /* Ajuster la hauteur */
+    min-height: 70vh; /* Garder une hauteur minimale */
+    padding-top: 0;
+  }
+
+  .profile {
+    opacity: 1; /* Réduire l'opacité */
+    height: 80%; /* Ajuster la hauteur */
+  }
+
+  .Bienvenue {
+    font-size: 8rem;
+    top: 20%;
+    right: 30%;
+  }
+
+  .presHeader {
+    top: 30%;
+    font-size: 0.9rem;
+  }
+
+  .intro {
+    top: 40%;
+    right: 5%;
+    transform: translateX(50%);
+    width: 90%;
+    font-size: 1.5rem;
+  }
+
+  .Arrow {
+    top: 10%;
+    width: 40px;
+  }
+
+  .buttons {
+    transform: translateX(70%);
+  }
+}
+
+/* Pour les écrans de taille mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .headerG {
+    height: auto;
+    min-height: 50vh;
+    padding-top: 0;
+  }
+
+  .profile {
+    opacity: 1;
+    height: 60%;
+    width: 60%;
+    top: auto;
+    bottom: 0;
+    right: 0;
+  }
+
+  .Bienvenue {
+    font-size: 4rem;
+    top: 10%;
+    right: 5%;
+    width: auto;
+  }
+
+  .presHeader {
+    top: 25%;
+    font-size: 0.8rem;
+    width: 80%;
+  }
+
+  .intro {
+		display: none;
+  }
+
+  .Arrow {
+    display: none; /* Cacher la flèche sur mobile */
+  }
+
+  .buttons {
+    display: none; /* Cacher les boutons classiques */
+  }
+
+
+}
+
+/* Pour les écrans très petits (max-width: 480px) */
+@media (max-width: 480px) {
+  .Bienvenue {
+    display: none;
+  }
+
+  .intro {
+    font-size: 0.9rem;
+    left: 5%;
+    width: 90%;
+  }
 }

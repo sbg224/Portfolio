@@ -86,7 +86,7 @@
 	}
 }
 
-@media (max-width: 650px) {
+/* @media (max-width: 650px) {
 	.formName {
 		display: flex;
 		flex-direction: column;
@@ -102,5 +102,38 @@
 		flex-direction: column;
 		gap: 0.5rem;
 		width: 200px;
+	}
+} */
+/* Media Queries */
+
+@media (max-width: 768px) {
+	.formName,
+	.formEmailNumber {
+		flex-direction: column;
+		gap: 1.5rem;
+		align-items: flex-start;
+	}
+
+	.inputWrapper {
+		width: 100%;
+	}
+
+	.myButtonS {
+		width: 100%;
+	}
+}
+
+@media (max-width: 480px) {
+	.formG {
+		gap: 1rem;
+		padding: 0.5rem;
+	}
+
+	.inputWrapper {
+		height: 40px;
+	}
+
+	.formMessage .myMessage {
+		font-size: 0.9rem;
 	}
 }

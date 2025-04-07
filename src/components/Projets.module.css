@@ -137,7 +137,7 @@
 }
 
 /* responsive */
-@media (max-width: 1250px) {
+/* @media (max-width: 1250px) {
 	.projetList {
 		display: flex;
 		flex-direction: column;
@@ -155,4 +155,84 @@
 		width: 100px;
 		margin-right: 1rem;
 	}
+} */
+ /* -------------------------------------------------------------------------- */
+/* Media Queries                               */
+/* -------------------------------------------------------------------------- */
+
+/* Pour les écrans de taille tablette (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .sectionProjet {
+    flex-direction: column; /* Empiler les éléments */
+    align-items: flex-start; /* Aligner à gauche */
+    padding: 2rem 1rem;
+    margin: 2rem auto;
+    gap: 1.5rem;
+    min-height: auto; /* Ajuster la hauteur automatiquement */
+  }
+
+  .divContaiteur {
+		flex-direction: column;
+    width: 100%; /* Pleine largeur */
+    padding: 1rem 0;
+  }
+
+  .divContaiteur h3 {
+    font-size: 28px;
+    width: 100%; /* Pleine largeur */
+    position: static; /* Positionnement normal */
+    transform: none !important; /* Annuler les transformations */
+    opacity: 1 !important; /* Afficher toujours */
+  }
+
+  .divContaiteur .listImgSrc {
+    width: 100%;
+    max-width: 100%; /* Pleine largeur */
+    height: auto;
+    max-height: none; /* Pas de hauteur maximale */
+    position: static; /* Positionnement normal */
+    opacity: 1 !important; /* Afficher toujours */
+    transform: none !important; /* Annuler les transformations */
+    margin-top: 1rem; /* Espace au-dessus de l'image */
+  }
+
+  .viewDiv {
+    height: 100px;
+    width: 100px;
+    margin-right: 0; /* Pas de marge à droite */
+    margin-top: 1rem; /* Espace en dessous de l'image */
+  }
 }
+
+/* Pour les écrans de taille mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .projetG {
+    width: 95%; /* Plus de largeur sur mobile */
+  }
+
+  .sectionProjet {
+    padding: 1.5rem 0.5rem;
+    margin: 1.5rem auto;
+  }
+
+  .divContaiteur h3 {
+    font-size: 24px;
+  }
+
+  .viewDiv {
+    height: 80px;
+    width: 80px;
+  }
+
+  .viewDiv a {
+    font-size: 1rem;
+  }
+}
+
+/* Pour les écrans très petits (max-width: 480px) */
+@media (max-width: 480px) {
+  .divContaiteur h3 {
+    font-size: 20px;
+  }
+}
+
