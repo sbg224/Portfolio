@@ -1,8 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-
 import { useGSAP } from "@gsap/react";
-import { ShowModeContext } from "../context/ShowModeContext";
-import { useContext } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import style from "./Header.module.css";
