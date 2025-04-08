@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+
 import { useGSAP } from "@gsap/react";
 import { ShowModeContext } from "../context/ShowModeContext";
 import { useContext } from "react";
@@ -13,7 +13,7 @@ import NavBar from "./NavBar";
 gsap.registerPlugin(ScrollTrigger);
 
 function Header() {
-  const { showNav, setShowNav } = useContext(ShowModeContext);
+  
   const [showHeader, setShowHeader] = useState(false);
 
   // Références pour les animations GSAP
@@ -21,6 +21,7 @@ function Header() {
   const Bienvenue = useRef<HTMLParagraphElement>(null);
   const pageTransit = useRef<HTMLDivElement>(null);
   const textContainer = useRef<HTMLDivElement>(null);
+  const profileRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     const hasAnimated = localStorage.getItem('hasAnimated');
@@ -102,13 +103,26 @@ function Header() {
           duration: 0.6,
           ease: "power1.inOut",
         });
+    } 
+  }, []);
+  useEffect(() => {
+    if (profileRef.current) {
+      gsap.to(profileRef.current, {
+        y: -100,
+        ease: "none",
+        scrollTrigger: {
+          trigger: document.body,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+          // markers: true,
+        },
+      });
     }
   }, []);
 
-  // Fonction pour gérer l'affichage de la navigation
-  const handleShow = () => {
-    setShowNav(!showNav); // Inverser la valeur de showNav
-  };
+
+
 
   return (
     <div className={style.headerG}>
@@ -128,16 +142,13 @@ function Header() {
         “Hello, I’m Mohamed BAH, a Full-Stack Developer. I’m 22 years old and
         based in Toulouse.”
       </p>
-      <img src={profile} alt="Arrière plan" className={style.profile} />
+      <img ref={profileRef} src={profile} alt="Arrière plan" className={style.profile} />
       <p className={style.intro} ref={introText}>
         Développeur web en formation, passionné par la création de solutions
         modernes et adaptatives. À la recherche d’une alternance pour développer
         et appliquer mes compétences dans des environnements collaboratifs et
         dynamiques.
       </p>
-      <button type="button" onClick={handleShow} className={style.buttonBurger}>
-        {showNav ? <FaTimes /> : <FaBars />}
-      </button>
       {!showHeader && (
         <div ref={pageTransit} className={style.pageTransit}>
           <div ref={textContainer} className={style.textAnimation}>

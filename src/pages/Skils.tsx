@@ -5,7 +5,9 @@ import NavBar from "../components/NavBar";
 function Skils() {
   return (
     <>
-      <NavBar />
+      <div className={style.navHeader}>
+        <NavBar />
+      </div>
       <div className={style.skillsPage}>
         <section className={style.education}>
           <h2 className={style.sectionTitle}>

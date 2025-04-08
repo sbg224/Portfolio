@@ -86,47 +86,56 @@ function About() {
 
   return (
     <>
-      <NavBar />
+      <div className={style.navHeader}>
+        <NavBar />
+      </div>
       <div className={style.aboutG}>
         <div className={style.titleText}>
           <h2>À Propos</h2>
           <p>
             Passionné par le monde du web et fort d'une récente reconversion
-            professionnelle, je suis un développeur web et web mobile déterminé à
-            transformer des idées en réalités numériques. Mon parcours, enrichi
-            par une expérience significative dans la gestion et le service client
-            chez Carrefour City, m'a doté d'une solide capacité d'adaptation, d'un
-            sens aigu de l'organisation et d'un excellent relationnel.
+            professionnelle, je suis un développeur web et web mobile déterminé
+            à transformer des idées en réalités numériques. Mon parcours,
+            enrichi par une expérience significative dans la gestion et le
+            service client chez Carrefour City, m'a doté d'une solide capacité
+            d'adaptation, d'un sens aigu de l'organisation et d'un excellent
+            relationnel.
           </p>
           <p>
             Animé par une soif d'apprendre constante, j'ai plongé avec
             enthousiasme dans les technologies clés du développement front-end
-            (React, TypeScript, HTML, CSS, JavaScript, GSAP) et back-end (Node.js,
-            Express.js, SQL - MySQL). Ma participation active à des projets
-            collaboratifs comme CHUKO Manga et Night-Flow témoigne de mon esprit
-            d'équipe, de ma curiosité technique et de ma capacité à gérer le
-            stress dans des environnements dynamiques.
+            (React, TypeScript, HTML, CSS, JavaScript, GSAP) et back-end
+            (Node.js, Express.js, SQL - MySQL). Ma participation active à des
+            projets collaboratifs comme CHUKO Manga et Night-Flow témoigne de
+            mon esprit d'équipe, de ma curiosité technique et de ma capacité à
+            gérer le stress dans des environnements dynamiques.
           </p>
           <p>
             Je suis particulièrement attiré par la conception de solutions
-            innovantes et accessibles, où l'esthétique rencontre la fonctionnalité.
-            Mon objectif est de mettre mes compétences techniques et mon
-            savoir-être au service d'une entreprise qui valorise l'engagement, la
-            communication et la réactivité. Ouvert aux opportunités et désireux de
-            m'investir pleinement dans un nouveau projet professionnel, je suis
-            prêt à relever les défis et à contribuer activement au succès de votre
-            équipe.
+            innovantes et accessibles, où l'esthétique rencontre la
+            fonctionnalité. Mon objectif est de mettre mes compétences
+            techniques et mon savoir-être au service d'une entreprise qui
+            valorise l'engagement, la communication et la réactivité. Ouvert aux
+            opportunités et désireux de m'investir pleinement dans un nouveau
+            projet professionnel, je suis prêt à relever les défis et à
+            contribuer activement au succès de votre équipe.
           </p>
-          <a href={CV} download="Mohamed_Bah_CV.pdf" className={style.downloadButton}>
+          <a
+            href={CV}
+            download="Mohamed_Bah_CV.pdf"
+            className={style.downloadButton}
+          >
             <i className="fas fa-download" /> Télécharger mon CV
           </a>
         </div>
-        <Formulaire
-          handleChange={handleChange}
-          datas={datas}
-          handleSubmit={handleSubmit}
-          isLoading={isLoading}
-        />
+        <div className={style.formContainer}>
+          <Formulaire
+            handleChange={handleChange}
+            datas={datas}
+            handleSubmit={handleSubmit}
+            isLoading={isLoading}
+          />
+        </div>
       </div>
     </>
   );

@@ -51,13 +51,14 @@
 }
 
 /* pour les ecrans de taille moyennes */
-/* @media (max-width: 890px) {
+@media (max-width: 890px) {
 	.ulNav {
 		display: none;
 		transition: ease-in-out 0.5s;
 	}
 	.PortfolioLogo {
 		position: absolute;
+		padding: .6rem;
 		right: 10px;
 		top: 0.5rem;
 		transition: transforme 0.2s;
@@ -67,112 +68,32 @@
 		position: absolute;
 		top: 1rem;
 		backdrop-filter: blur(10px);
-		height: 47vh;
+		height: 40vh;
 		width: 25%;
 		transition: ease-in-out 0.2s;
 		left: -230px;
 		justify-content: center;
-		gap: 1.5rem;
+		gap: 1rem;
+	}
+	.burgerMenue {
+		left: 0;
+		width: 10vw;
+		top: 0;
+		transition: all .5s;
+	}
+	.buttonBurger {
+		display: block;
+		position: absolute;
+		left: 0.2rem;
+		top: 0.6rem;
+		width: 40px;
+		height: 30px;
+		font-size: 25px;
+		border-radius: 5px;
+		background: none;
+		cursor: pointer;
+		transition: all 1s ease-out;
 	}
 
-} */
- /* -------------------------------------------------------------------------- */
-/* Media Queries                               */
-/* -------------------------------------------------------------------------- */
-
-/* Pour les écrans de taille tablette (max-width: 1024px) */
-@media (max-width: 1024px) {
-  .navHeader {
-    padding: 0 1rem; /* Plus d'espace sur les côtés */
-  }
-
-  .liNav {
-    display: none; /* Cacher la navigation classique */
-  }
-
-  .PortfolioLogo {
-    font-size: 1.1rem; /* Légère réduction */
-    position: static; /* Annuler le positionnement absolu */
-  }
-
-  .buttons {
-    position: absolute;
-    top: 60px; /* Placer sous la barre de navigation */
-    left: 0;
-    width: 100%; /* Pleine largeur */
-    height: auto;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    /* background-color: rgba(0, 0, 0, 0.9); */
-    padding: 1rem;
-    gap: 1rem;
-    transform: translateX(-100%); /* Cacher par défaut */
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .burgerMenue {
-    transform: translateX(0); /* Afficher le menu */
-  }
-
-  .buttonBurger {
-    display: block; /* Afficher le bouton burger */
-  }
 }
 
-/* Pour les écrans de taille mobile (max-width: 768px) */
-@media (max-width: 768px) {
-  .navHeader {
-    padding: 0 0.5rem; /* Encore moins d'espace */
-		.liNav {
-			display: none;
-		}
-
-  }
-
-  .PortfolioLogo {
-		position: absolute;
-		padding: 1rem;
-		right: 10px;
-    font-size: 1rem; /* Encore plus petit */
-  }
-
-  .buttons {
-    top: 50px; /* Ajustement fin */
-  }
-	.buttonBurger {
-    display: block;
-    position: absolute;
-    left: 0.2rem;
-    top: 0.6rem;
-    width: 40px;
-    height: 30px;
-    font-size: 25px;
-    border-radius: 5px;
-    background: none;
-    cursor: pointer;
-    transition: all 1s ease-out;
-    color: #fff;
-  }
-
-  .burgerMenue {
-    left: -100%; /* Cacher par défaut */
-    width: 60vw;
-    top: 0;
-    height: 100vh;
-    /* background-color: rgba(0, 0, 0, 0.9); */
-    transition: all 0.5s ease-in-out;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-/* Pour les écrans très petits (max-width: 480px) */
-@media (max-width: 480px) {
-  .PortfolioLogo {
-    font-size: 0.9rem; /* Taille minimale */
-  }
-}

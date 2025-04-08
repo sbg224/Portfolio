@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import ButtonNav from "./ButtonNav";
 import { ShowModeContext } from "../context/ShowModeContext";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { useContext } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import style from "./NavBar.module.css";
@@ -11,11 +12,16 @@ import style from "./NavBar.module.css";
 // }
 
 function NavBar() {
-	const showNav = useContext(ShowModeContext)
+	const { showNav, setShowNav } = useContext(ShowModeContext);
 
 	const myButtonH = useNavigate();
 	const myButtonP = useNavigate();
 	const myButtonA = useNavigate();
+
+	  // Fonction pour gérer l'affichage de la navigation
+		const handleShow = () => {
+			setShowNav(!showNav); // Inverser la valeur de showNav
+		};
 
 	return (
 		<div>
@@ -69,6 +75,9 @@ function NavBar() {
 					</li>
 				</ul>
 			</nav>
+			<button type="button" onClick={handleShow} className={style.buttonBurger}>
+        {showNav ? <FaTimes /> : <FaBars />}
+      </button>
 		</div>
 	);
 }

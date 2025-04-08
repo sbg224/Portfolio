@@ -1,9 +1,5 @@
 /* css module */
 .headerG {
-	/* background: 
-    linear-gradient(100deg, #D4D3DC 30%, #EEE6D8 50%, #7b7e7cb4 70%),
-    linear-gradient(to top, #BED3C3, transparent 100%);
-    background-blend-mode: overlay;  */
 	background-color: #26474e;
 	/* background-image: url("../assets/profile-Bgi2.png"); */
 	background-size: cover;
@@ -21,24 +17,25 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	/* z-index: -1; */
 }
 .profile {
-  position: absolute;
+  position: absolute; /* Ou fixed si vous voulez qu'il reste fixe dans la fenêtre */
   top: 0;
   right: 0;
-  width: auto;
   height: 100%;
+  max-height: 100vh;
   object-fit: contain;
   opacity: 0.9;
   z-index: -1;
   pointer-events: none;
+  transform: translateY(0); /* Important pour GSAP */
+  transition: transform 0.2s ease-out;
 }
 
 
 .intro {
 	position: absolute;
-	transform: translateX(80%);
+	transform: translateX(60%);
 	top: 50%;
 	width: 50%;
 	padding: 2.5rem 0;
@@ -80,8 +77,6 @@
 	display: flex;
 	align-items: center;
 	gap: 1rem;
-	/* background-color:#eaeaea38 ; */
-	/* width: 35%; */
 	height: 5vh;
 	transform: translateX(90%);
 }
@@ -112,12 +107,47 @@
 		display: none;
 		transition: ease-in-out 0.5s;
 	}
-	.PortfolioLogo {
-		position: absolute;
-		right: 10px;
-		top: 0.5rem;
-		transition: transforme 0.2s;
+	.arrow {
+		display: none;
 	}
+	.profile {
+		position: absolute; /* Ou fixed si vous voulez qu'il reste fixe dans la fenêtre */
+		bottom: 0;
+		right: 0;
+		height: 70%;
+		max-height: 100vh;
+		object-fit: contain;
+		opacity: 0.9;
+		z-index: -1;
+		pointer-events: none;
+		transform: translateX(0%);
+		transform: translateY(20%); /* Important pour GSAP */
+		transition: transform 0.2s ease-out;
+	}
+	.Bienvenue {
+		position: absolute;
+		top: 6rem;
+		right: 0rem;
+		font-size: 16px;
+		height: 50px;
+
+	}
+	.intro {
+		display: none;
+	}
+	.Arrow {
+		display: none;
+	}
+	.presHeader {
+		display:block;
+		position: absolute;
+		top: 15rem;
+		left: .3rem;
+		font-size: 14px;
+		height: 25px;
+		width: 200px;
+	}
+
 	.buttons {
 		flex-direction: column;
 		position: absolute;
@@ -130,137 +160,7 @@
 		justify-content: center;
 		gap: 1.5rem;
 	}
-	.burgerMenue {
-		left: 0;
-		width: 25vw;
-		top: 0;
-		transition: all .5s;
-	}
-	.buttonBurger {
-		display: block;
-		position: absolute;
-		left: 0.2rem;
-		top: 0.6rem;
-		width: 40px;
-		height: 30px;
-		font-size: 25px;
-		border-radius: 5px;
-		background: none;
-		cursor: pointer;
-		transition: all 1s ease-out;
-	}
 	.intro {
-		display: block;
-		position: absolute;
-		top: 10rem;
-		right: 9rem;
-		font-size: 16px;
-		height: 20px;
-	}
-}
-
-
-
-/* -------------------------------------------------------------------------- */
-/* Media Queries                               */
-/* -------------------------------------------------------------------------- */
-
-/* Pour les écrans de taille tablette (max-width: 1024px) */
-@media (max-width: 1024px) {
-  .headerG {
-    height: auto; /* Ajuster la hauteur */
-    min-height: 70vh; /* Garder une hauteur minimale */
-    padding-top: 0;
-  }
-
-  .profile {
-    opacity: 1; /* Réduire l'opacité */
-    height: 80%; /* Ajuster la hauteur */
-  }
-
-  .Bienvenue {
-    font-size: 8rem;
-    top: 20%;
-    right: 30%;
-  }
-
-  .presHeader {
-    top: 30%;
-    font-size: 0.9rem;
-  }
-
-  .intro {
-    top: 40%;
-    right: 5%;
-    transform: translateX(50%);
-    width: 90%;
-    font-size: 1.5rem;
-  }
-
-  .Arrow {
-    top: 10%;
-    width: 40px;
-  }
-
-  .buttons {
-    transform: translateX(70%);
-  }
-}
-
-/* Pour les écrans de taille mobile (max-width: 768px) */
-@media (max-width: 768px) {
-  .headerG {
-    height: auto;
-    min-height: 50vh;
-    padding-top: 0;
-  }
-
-  .profile {
-    opacity: 1;
-    height: 60%;
-    width: 60%;
-    top: auto;
-    bottom: 0;
-    right: 0;
-  }
-
-  .Bienvenue {
-    font-size: 4rem;
-    top: 10%;
-    right: 5%;
-    width: auto;
-  }
-
-  .presHeader {
-    top: 25%;
-    font-size: 0.8rem;
-    width: 80%;
-  }
-
-  .intro {
 		display: none;
-  }
-
-  .Arrow {
-    display: none; /* Cacher la flèche sur mobile */
-  }
-
-  .buttons {
-    display: none; /* Cacher les boutons classiques */
-  }
-
-
-}
-
-/* Pour les écrans très petits (max-width: 480px) */
-@media (max-width: 480px) {
-  .Bienvenue {
-    display: none;
-  }
-
-  .intro {
-    font-size: 0.9rem;
-    left: 5%;
-    width: 90%;
-  }
+	}
 }

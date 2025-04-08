@@ -1,7 +1,7 @@
 .aboutG {
 	width: 50%;
 	margin: 0 auto;
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	/* align-items: center; */
@@ -11,6 +11,9 @@
 		flex-direction: column;
 		gap: 0.8rem;
 		margin: 3rem 0;
+	}
+	.formContainer {
+		margin-top: 1rem;
 	}
 	.downloadButton {
 		display: flex;
@@ -43,6 +46,9 @@
   .titleText {
     margin: 1.5rem 0; 
   }
+	.formContainer {
+		margin-top: 1rem;
+	}
 }
 
 /* Pour les écrans de taille mobile (max-width: 768px) */
@@ -58,6 +64,9 @@
     gap: 0.5rem; 
     margin: 1rem 0; 
   }
+	.formContainer {
+		margin-top: 1rem;
+	}
 }
 
 /* Pour les écrans très petits (max-width: 480px) */

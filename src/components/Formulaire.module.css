@@ -109,12 +109,16 @@
 @media (max-width: 768px) {
 	.formName,
 	.formEmailNumber {
+		width: 100%;
 		flex-direction: column;
 		gap: 1.5rem;
 		align-items: flex-start;
 	}
 
 	.inputWrapper {
+		width: 100%;
+	}
+	.formMessage .myMessage {
 		width: 100%;
 	}
 
@@ -135,5 +139,6 @@
 
 	.formMessage .myMessage {
 		font-size: 0.9rem;
+		width: 100%;
 	}
 }
