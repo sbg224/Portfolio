@@ -85,7 +85,7 @@ function Header() {
         opacity: 0,
         stagger: 0.1,
         duration: 0.5,
-        delay: 3,
+        delay: 1.5,
         ease: "power2.out",
       })
         .to(letters, {
@@ -131,6 +131,7 @@ function Header() {
           opacity: 1, // Elles deviennent visibles
           y: 0,
           duration: 0.3,
+          delay: 2,
           stagger: 0.1, // Décalage entre les lettres pour un effet en cascade
           ease: "power2.out", // Animation fluide
           // repeat: 1,  // Animation infinie
