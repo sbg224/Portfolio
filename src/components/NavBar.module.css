@@ -4,10 +4,10 @@
 	justify-content: space-between;
 	padding: 1rem 0.7rem;
 	background-color: #26474e;
-	position: fixed;        /* ✅ La rendre fixe */
-	top: 0;                 /* ✅ Collée en haut */
+	position: fixed;
+	top: 0;
 	left: 0;
-	width: 100%;            /* ✅ Prend toute la largeur */
+	width: 100%;
 	height: 50px;
 	z-index: 9999;
 	.liNav {
@@ -34,7 +34,6 @@
 	font-size: 1rem;
 	color: #fff;
 	position: fixed;
-	padding-bottom: 1rem;
 	padding-left: .5rem;
 	font-weight: 100;
 	font-family: var(--font-family);
@@ -56,16 +55,16 @@
 	height: 50px;
 	justify-content: center;
 	gap: 1rem;
-	background-color: rgba(0, 0, 0, 0.7); /* semi-transparent pour voir le fond */
+	background-color: rgba(0, 0, 0, 0.7);
 	padding: 0.8rem 1.2rem;
 	border: solid 1px white;
 	border-radius: 10px;
 	position: fixed;
 	left: 50%;
-	transform: translateX(-50%); /* bien centré */
+	transform: translateX(-50%);
 	bottom: 10px;
-	z-index: 9999; /* au-dessus de tout */
-	backdrop-filter: blur(5px); /* joli effet flou si tu veux */
+	z-index: 9999;
+	backdrop-filter: blur(5px);
 }
 
 .buttonLink {
@@ -124,25 +123,6 @@
 	.buttonLink{
 		font-size: 14px;
 	}
-	/* .burgerMenue {
-		left: 0;
-		width: 10vw;
-		top: 0;
-		transition: all .5s;
-	}
-	.buttonBurger {
-		display: block;
-		position: absolute;
-		left: 0.2rem;
-		top: 0.6rem;
-		width: 40px;
-		height: 30px;
-		font-size: 25px;
-		border-radius: 5px;
-		background: none;
-		cursor: pointer;
-		transition: all 1s ease-out;
-	} */
 
 }
 

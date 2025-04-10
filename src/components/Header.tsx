@@ -5,7 +5,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import style from "./Header.module.css";
 import Arrow from "../assets/Group 157.svg";
 import profile from "../assets/profile-boss.png";
-import { Link } from "react-scroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -143,9 +142,6 @@ function Header() {
 
   return (
     <div className={style.headerG}>
-      <Link to="home" smooth={true} duration={500}>
-        <h1 className={style.PortfolioLogo}>&copy; BAH Mohamed</h1>
-      </Link>
       <p className={style.Bienvenue} ref={Bienvenue}>
         <div>H</div>
         <div>E</div>

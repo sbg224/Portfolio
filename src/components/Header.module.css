@@ -115,14 +115,14 @@
 		position: absolute; /* Ou fixed si vous voulez qu'il reste fixe dans la fenêtre */
 		bottom: 0;
 		right: 0;
-		height: 70%;
+		height: 50%;
 		max-height: 100vh;
 		object-fit: contain;
 		opacity: 0.9;
 		z-index: -1;
 		pointer-events: none;
-		transform: translateX(0%);
-		transform: translateY(20%); /* Important pour GSAP */
+		transform: translateX(90%);
+		transform: translateY(-50%); 
 		transition: transform 0.2s ease-out;
 	}
 	.Bienvenue {
