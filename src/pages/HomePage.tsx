@@ -8,7 +8,6 @@ import Header from "../components/Header";
 import Skills from "./Skils";
 import Contact from "./About";
 import style from "./HomePage.module.css";
-import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 
 function HomePage() {

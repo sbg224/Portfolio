@@ -1,5 +1,4 @@
 
-import ProfilC from "../assets/profile-pic.png"
 import style from "./Footer.module.css";
 
 function Footer() {
