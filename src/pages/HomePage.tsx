@@ -9,6 +9,7 @@ import Skills from "./Skils";
 import Contact from "./About";
 import style from "./HomePage.module.css";
 import Footer from "../components/Footer";
+import NavBar from "../components/NavBar";
 
 function HomePage() {
   // const projetDatas = useLoaderData();
@@ -50,6 +51,7 @@ function HomePage() {
 
   return (
     <div>
+      <NavBar />
       <MyArryProvider>
         <section id="home" className={style.section}>
           <Header />
@@ -63,7 +65,6 @@ function HomePage() {
         <section id="contact" className={style.section}>
           <Contact />
         </section>
-				<Footer />
       </MyArryProvider>
     </div>
   );

@@ -43,29 +43,29 @@ function Skils() {
             <div className={style.skillCategory}>
               <h3>Front-End</h3>
               <div className={style.skill}>
-                <i className="fab fa-html5" />
+                <i className={`fab fa-html5 ${style.iconHtml}`} />
                 <span>HTML</span>
               </div>
               <div className={style.skill}>
-                <i className="fab fa-css3-alt" />
+                <i className={`fab fa-css3-alt ${style.iconCss}`} />
                 <span>CSS</span>
               </div>
               <div className={style.skill}>
-                <i className="fab fa-js" />
+                <i className={`fab fa-js ${style.iconJs}`} />
                 <span>JavaScript (ES6)</span>
               </div>
               <div className={style.skill}>
-                <i className="fab fa-react" />
+                <i className={`fab fa-react ${style.iconReact}`} />
                 <span>React</span>
               </div>
               {/* Ajout Typscript qui est dans le CV */}
               <div className={style.skill}>
-                <i className="fab fa-react" />
+                <i className={`fab fa-react ${style.iconTs}`} />
                 <span>TypeScript</span>
               </div>
               {/* Ajout GSAP qui est dans le CV */}
               <div className={style.skill}>
-                <i className="fa-brands fa-sourcetree" />
+                <i className={`fa-brands fa-sourcetree ${style.iconGsap}`} />
                 <span>GSAP</span>
               </div>
             </div>
@@ -73,16 +73,16 @@ function Skils() {
             <div className={style.skillCategory}>
               <h3>Back-End</h3>
               <div className={style.skill}>
-                <i className="fas fa-database" />
+                <i className={`fas fa-database ${style.iconSql}`} />
                 <span>SQL (MySQL)</span>
               </div>
               <div className={style.skill}>
-                <i className="fas fa-cogs" />
+                <i className={`fas fa-cogs ${style.iconNode}`} />
                 <span>Node.js</span>
               </div>
               {/* Ajout Express qui est dans le CV */}
               <div className={style.skill}>
-                <i className="fas fa-cogs" />
+                <i className={`fas fa-cogs ${style.iconExpress}`} />
                 <span>Express.js</span>
               </div>
             </div>
@@ -90,23 +90,23 @@ function Skils() {
             <div className={style.skillCategory}>
               <h3>Outils</h3>
               <div className={style.skill}>
-                <i className="fab fa-git" />
+                <i className={`fab fa-git ${style.iconGit}`} />
                 <span>Git</span>
               </div>
               <div className={style.skill}>
-                <i className="fab fa-github" />
+                <i className={`fab fa-github ${style.iconGithub}`} />
                 <span>GitHub</span>
               </div>
               <div className={style.skill}>
-                <i className="fab fa-vscode" />
+                <i className={`fab fa-vscode ${style.iconVscode}`} />
                 <span>VS Code</span>
               </div>
               <div className={style.skill}>
-                <i className="fab fa-figma" />
+                <i className={`fab fa-figma ${style.iconFigma}`} />
                 <span>Figma</span>
               </div>
               <div className={style.skill}>
-                <i className="fas fa-table" />
+                <i className={`fas fa-table ${style.iconExcel}`} />
                 <span>Excel</span>
               </div>
             </div>

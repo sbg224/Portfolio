@@ -1,7 +1,7 @@
 import { Link as ScrollLink } from "react-scroll";
-import { ShowModeContext } from "../context/ShowModeContext";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { useContext } from "react";
+// import { ShowModeContext } from "../context/ShowModeContext";
+// import { FaBars, FaTimes } from "react-icons/fa";
+// import { useContext } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import style from "./NavBar.module.css";
 
@@ -10,14 +10,14 @@ import style from "./NavBar.module.css";
 // }
 
 function NavBar() {
-  const { showNav, setShowNav } = useContext(ShowModeContext);
+  // const { showNav, setShowNav } = useContext(ShowModeContext);
 
 
 
   // Fonction pour gérer l'affichage de la navigation
-  const handleShow = () => {
-    setShowNav(!showNav); // Inverser la valeur de showNav
-  };
+  // const handleShow = () => {
+  //   setShowNav(!showNav); // Inverser la valeur de showNav
+  // };
 
   return (
     <div>
@@ -25,15 +25,14 @@ function NavBar() {
         <ScrollLink to="home" smooth={true} duration={500}>
           <h1 className={style.PortfolioLogo}>&copy; BAH Mohamed</h1>
         </ScrollLink>
-
-        <div className={`${style.buttons} ${showNav ? style.burgerMenue : ""}`}>
+        <div className={style.buttons}>
           <ScrollLink
             to="home"
             smooth={true}
             duration={500}
             className={style.buttonLink}
           >
-            Home
+            <i className="fas fa-house" title="Accueil" />
           </ScrollLink>
           <ScrollLink
             to="projects"
@@ -49,7 +48,7 @@ function NavBar() {
             duration={500}
             className={style.buttonLink}
           >
-            My skills
+            skills
           </ScrollLink>
           <ScrollLink
             to="contact"
@@ -87,9 +86,6 @@ function NavBar() {
           </li>
         </ul>
       </nav>
-      <button type="button" onClick={handleShow} className={style.buttonBurger}>
-        {showNav ? <FaTimes /> : <FaBars />}
-      </button>
     </div>
   );
 }

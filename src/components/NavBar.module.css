@@ -1,11 +1,15 @@
 .navHeader {
 	display: flex;
-	align-items: center;
 	flex-direction: row;
 	justify-content: space-between;
-	padding: 0 0.7rem;
+	padding: 1rem 0.7rem;
 	background-color: #26474e;
-	z-index: -1;
+	position: fixed;        /* ✅ La rendre fixe */
+	top: 0;                 /* ✅ Collée en haut */
+	left: 0;
+	width: 100%;            /* ✅ Prend toute la largeur */
+	height: 50px;
+	z-index: 9999;
 	.liNav {
 		display: flex;
 		flex-direction: row;
@@ -29,7 +33,9 @@
 .PortfolioLogo {
 	font-size: 1rem;
 	color: #fff;
-	padding: .5rem;
+	position: fixed;
+	padding-bottom: 1rem;
+	padding-left: .5rem;
 	font-weight: 100;
 	font-family: var(--font-family);
 	border-radius: 10px;
@@ -47,16 +53,22 @@
 .buttons {
 	display: flex;
 	align-items: center;
+	height: 50px;
 	justify-content: center;
 	gap: 1rem;
-	height: 5vh;
-	
-	/* transform: translateX(90%); */
+	background-color: rgba(0, 0, 0, 0.7); /* semi-transparent pour voir le fond */
+	padding: 0.8rem 1.2rem;
+	border: solid 1px white;
+	border-radius: 10px;
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%); /* bien centré */
+	bottom: 10px;
+	z-index: 9999; /* au-dessus de tout */
+	backdrop-filter: blur(5px); /* joli effet flou si tu veux */
 }
 
 .buttonLink {
-	/* width: 5rem; */
-	/* height: 35px; */
 	padding: .5rem;
 	font-size: 1rem;
 	color: #fff;
@@ -75,9 +87,9 @@
 			rgba(163, 255, 102, 0.6);
 	}
 }
-.buttonBurger {
+/* .buttonBurger {
 	display: none;
-}
+} */
 
 /* pour les ecrans de taille moyennes */
 @media (max-width: 890px) {
@@ -88,23 +100,31 @@
 	.PortfolioLogo {
 		position: absolute;
 		padding: .6rem;
-		right: 10px;
-		top: 0.5rem;
+		left: 10px;
+		top: 0;
 		transition: transforme 0.2s;
 	}
 	.buttons {
-		flex-direction: column;
-		position: absolute;
-		top: 1rem;
-		backdrop-filter: blur(10px);
-		height: 40vh;
-		width: 25%;
-		transition: ease-in-out 0.2s;
-		left: -230px;
+		display: flex;
+		align-items: center;
+		height: 40px;
 		justify-content: center;
-		gap: 1rem;
+		gap: .5rem;
+		background-color: rgba(0, 0, 0, 0.7); /* semi-transparent pour voir le fond */
+		padding: 0.8rem 1.2rem;
+		border: solid 1px white;
+		border-radius: 10px;
+		position: fixed;
+		left: 50%;
+		transform: translateX(-50%); /* bien centré */
+		bottom: 10px;
+		z-index: 9999; /* au-dessus de tout */
+		backdrop-filter: blur(5px); /* joli effet flou si tu veux */
 	}
-	.burgerMenue {
+	.buttonLink{
+		font-size: 14px;
+	}
+	/* .burgerMenue {
 		left: 0;
 		width: 10vw;
 		top: 0;
@@ -122,7 +142,24 @@
 		background: none;
 		cursor: pointer;
 		transition: all 1s ease-out;
-	}
+	} */
 
 }
 
+/* Couleurs pour les icônes */
+.iconHtml { color: #e34c26; }
+.iconCss { color: #264de4; }
+.iconJs { color: #f0db4f; }
+.iconReact { color: #61dafb; }
+.iconTs { color: #007acc; }
+.iconGsap { color: #88ce02; }
+
+.iconSql { color: #f29111; }
+.iconNode { color: #68a063; }
+.iconExpress { color: #333; }
+
+.iconGit { color: #f1502f; }
+.iconGithub { color: #24292e; }
+.iconVscode { color: #007acc; }
+.iconFigma { color: #a259ff; }
+.iconExcel { color: #217346; }

@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import style from "./Header.module.css";
 import Arrow from "../assets/Group 157.svg";
 import profile from "../assets/profile-boss.png";
-import NavBar from "./NavBar";
+import { Link } from "react-scroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -124,26 +124,28 @@ function Header() {
         letters,
         {
           scale: 0.8, // Les lettres commencent petites
-        opacity: 0,  // Initialement invisibles
-        y: 20,
-      },
-      {
-        scale: 1.2,  // Les lettres s'agrandissent légèrement
-        opacity: 1,  // Elles deviennent visibles
-        y: 0,
-        duration: 0.3,
-        stagger: 0.1,  // Décalage entre les lettres pour un effet en cascade
-        ease: "power2.out",  // Animation fluide
-        // repeat: 1,  // Animation infinie
-        // yoyo: true,  // Aller-retour
-      }
+          opacity: 0, // Initialement invisibles
+          y: 20,
+        },
+        {
+          scale: 1.2, // Les lettres s'agrandissent légèrement
+          opacity: 1, // Elles deviennent visibles
+          y: 0,
+          duration: 0.3,
+          stagger: 0.1, // Décalage entre les lettres pour un effet en cascade
+          ease: "power2.out", // Animation fluide
+          // repeat: 1,  // Animation infinie
+          // yoyo: true,  // Aller-retour
+        }
       );
     }
   }, []);
 
   return (
     <div className={style.headerG}>
-      <NavBar />
+      <Link to="home" smooth={true} duration={500}>
+        <h1 className={style.PortfolioLogo}>&copy; BAH Mohamed</h1>
+      </Link>
       <p className={style.Bienvenue} ref={Bienvenue}>
         <div>H</div>
         <div>E</div>
