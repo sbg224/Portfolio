@@ -10,7 +10,6 @@ import NavBar from "./NavBar";
 gsap.registerPlugin(ScrollTrigger);
 
 function Header() {
-  
   const [showHeader, setShowHeader] = useState(false);
 
   // Références pour les animations GSAP
@@ -19,9 +18,9 @@ function Header() {
   const pageTransit = useRef<HTMLDivElement>(null);
   const textContainer = useRef<HTMLDivElement>(null);
   const profileRef = useRef<HTMLImageElement>(null);
-
+  const presHeaderRef = useRef<HTMLParagraphElement>(null);
   useEffect(() => {
-    const hasAnimated = localStorage.getItem('hasAnimated');
+    const hasAnimated = localStorage.getItem("hasAnimated");
     const page = pageTransit.current;
     const texts = textContainer.current?.children;
 
@@ -36,7 +35,7 @@ function Header() {
       const tl = gsap.timeline({
         onComplete: () => {
           setShowHeader(true);
-          localStorage.setItem('hasAnimated', 'true'); // Marquer l'animation comme jouée
+          localStorage.setItem("hasAnimated", "true"); // Marquer l'animation comme jouée
         },
       });
 
@@ -100,7 +99,7 @@ function Header() {
           duration: 0.6,
           ease: "power1.inOut",
         });
-    } 
+    }
   }, []);
   useEffect(() => {
     if (profileRef.current) {
@@ -118,8 +117,29 @@ function Header() {
     }
   }, []);
 
-
-
+  useEffect(() => {
+    const letters = presHeaderRef.current?.querySelectorAll("span");
+    if (letters) {
+      gsap.fromTo(
+        letters,
+        {
+          scale: 0.8, // Les lettres commencent petites
+        opacity: 0,  // Initialement invisibles
+        y: 20,
+      },
+      {
+        scale: 1.2,  // Les lettres s'agrandissent légèrement
+        opacity: 1,  // Elles deviennent visibles
+        y: 0,
+        duration: 0.3,
+        stagger: 0.1,  // Décalage entre les lettres pour un effet en cascade
+        ease: "power2.out",  // Animation fluide
+        // repeat: 1,  // Animation infinie
+        // yoyo: true,  // Aller-retour
+      }
+      );
+    }
+  }, []);
 
   return (
     <div className={style.headerG}>
@@ -129,17 +149,25 @@ function Header() {
         <div>E</div>
         <div>L</div>
         <div>L</div>
-        <div>o</div>
+        <div>O</div>
         <div>!</div>
         {/* <div>m</div>
         <div>e</div> */}
       </p>
       <img src={Arrow} alt="Arrière plan" className={style.Arrow} />
-      <p className={style.presHeader}>
-        “Hello, I’m Mohamed BAH, a Full-Stack Developer. I’m 22 years old and
-        based in Toulouse.”
+      <p className={style.presHeader} ref={presHeaderRef}>
+        {"“Hello, I’m Mohamed BAH, a Full-Stack Developer. I’m 22 years old and based in Toulouse.”"
+          .split("")
+          .map((char, index) => (
+            <span key={index}>{char}</span>
+          ))}
       </p>
-      <img ref={profileRef} src={profile} alt="Arrière plan" className={style.profile} />
+      <img
+        ref={profileRef}
+        src={profile}
+        alt="Arrière plan"
+        className={style.profile}
+      />
       <p className={style.intro} ref={introText}>
         Développeur web en formation, passionné par la création de solutions
         modernes et adaptatives. À la recherche d’une alternance pour développer

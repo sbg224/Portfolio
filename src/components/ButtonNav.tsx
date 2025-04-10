@@ -16,12 +16,6 @@ function ButtonNav({ handleChange, path, name}: myButtonType) {
 				className={style.button}
 				type="button"
 				onClick={() => handleChange(path)}
-				// onFocus={(e) => {
-				// 	e.currentTarget.style.backgroundColor = color;
-				// }}
-				// onBlur={(e) => {
-				// 	e.currentTarget.style.backgroundColor = "#EAEAEA";
-				// }}
 			>
 				{name}
 			</button>

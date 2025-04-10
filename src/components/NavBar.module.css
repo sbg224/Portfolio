@@ -29,23 +29,52 @@
 .PortfolioLogo {
 	font-size: 1rem;
 	color: #fff;
-	padding-left: .5rem;
+	padding: .5rem;
 	font-weight: 100;
 	font-family: var(--font-family);
+	border-radius: 10px;
 	transform: matrix(1.1, 0, 0, 1.1, 0, 0);
 	transition: ease-in-out 0.2s;
+	&:hover {
+		opacity: 1;
+	transform: scale(1.1);
+	/* background-color: #D4D4F5; */
+		box-shadow: 0 0 15px rgba(102, 153, 255, 0.8), 0 0 25px
+			rgba(163, 255, 102, 0.6);
+	}
 }
 
 .buttons {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	gap: 1rem;
-	/* background-color:#eaeaea38 ; */
-	/* width: 35%; */
 	height: 5vh;
-	transform: translateX(90%);
+	
+	/* transform: translateX(90%); */
 }
 
+.buttonLink {
+	/* width: 5rem; */
+	/* height: 35px; */
+	padding: .5rem;
+	font-size: 1rem;
+	color: #fff;
+	font-family: var(--font-family);
+	font-weight: 100;
+	border: none;
+	transition: all 0.3s ease-in-out;
+	border-radius: 10px;
+	cursor: pointer;
+	background: none;
+	&:hover {
+		opacity: 1;
+	transform: scale(1.1);
+	/* background-color: #D4D4F5; */
+		box-shadow: 0 0 15px rgba(102, 153, 255, 0.8), 0 0 25px
+			rgba(163, 255, 102, 0.6);
+	}
+}
 .buttonBurger {
 	display: none;
 }

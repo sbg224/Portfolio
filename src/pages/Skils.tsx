@@ -1,13 +1,10 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import style from "./Skils.module.css";
-import NavBar from "../components/NavBar";
+
 
 function Skils() {
   return (
     <>
-      <div className={style.navHeader}>
-        <NavBar />
-      </div>
       <div className={style.skillsPage}>
         <section className={style.education}>
           <h2 className={style.sectionTitle}>

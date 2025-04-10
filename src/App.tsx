@@ -1,17 +1,15 @@
 import { Outlet } from "react-router-dom";
 import "./App.css";
-import Footer from "./components/Footer";
 import { ShowProvider } from "./context/ShowModeContext";
 
 function App() {
 
 	return (
 		<>
-			<ShowProvider>		
+			<ShowProvider>
 				<main>
 					<Outlet />
 				</main>
-				<Footer />
 			</ShowProvider>
 			
 		</>

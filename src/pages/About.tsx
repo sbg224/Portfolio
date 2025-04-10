@@ -3,7 +3,6 @@ import emailjs from "emailjs-com";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import style from "./About.module.css";
 import Formulaire from "../components/Formulaire";
-import NavBar from "../components/NavBar";
 import CV from "../assets/Mohamed bah-dev.pdf";
 
 function About() {
@@ -86,9 +85,6 @@ function About() {
 
   return (
     <>
-      <div className={style.navHeader}>
-        <NavBar />
-      </div>
       <div className={style.aboutG}>
         <div className={style.titleText}>
           <h2>À Propos</h2>

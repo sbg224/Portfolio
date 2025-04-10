@@ -1,14 +1,15 @@
-import style from "./Projets.module.css";
+import style from "./Projects.module.css";
 import { useEffect, useRef, useState } from "react";
 import { useContext } from "react";
 import { MyArryContext } from "../context/ContextProjet";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import RecentProjets from "./RecentProjets";
+import RecentProjets from "../components/RecentProjets";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Projets() {
+function Projects() {
   const myProjetsContext = useContext(MyArryContext);
   if (!myProjetsContext) {
     throw new Error(
@@ -126,4 +127,4 @@ function Projets() {
   );
 }
 
-export default Projets;
+export default Projects;
