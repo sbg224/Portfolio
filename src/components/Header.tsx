@@ -130,7 +130,7 @@ function Header() {
           scale: 1.2, // Les lettres s'agrandissent légèrement
           opacity: 1, // Elles deviennent visibles
           y: 0,
-          duration: 0.3,
+          duration: 0.1,
           delay: 2,
           stagger: 0.1, // Décalage entre les lettres pour un effet en cascade
           ease: "power2.out", // Animation fluide
