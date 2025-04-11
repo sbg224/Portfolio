@@ -62,7 +62,7 @@
 	position: fixed;
 	left: 50%;
 	transform: translateX(-50%);
-	bottom: 2rem;
+	bottom: 3rem;
 	z-index: 9999;
 	backdrop-filter: blur(5px);
 }
@@ -116,7 +116,7 @@
 		position: fixed;
 		left: 50%;
 		transform: translateX(-50%); /* bien centré */
-		bottom: 2rem;
+		bottom: 3rem;
 		z-index: 9999; /* au-dessus de tout */
 		backdrop-filter: blur(5px); /* joli effet flou si tu veux */
 	}

@@ -140,7 +140,7 @@ function About() {
             <a href={url} target="_blank" rel="noopener noreferrer">
               <img src={whatsApp} alt="contact" className={style.imgContact} />
             </a>
-            <p>WhatsApp</p>
+            <p>WhatApp</p>
           </div>
           <div className={style.email}>
             <a

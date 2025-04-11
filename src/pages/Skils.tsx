@@ -1,32 +1,31 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import style from "./Skils.module.css";
 
-
 function Skils() {
   return (
     <>
       <div className={style.skillsPage}>
         <section className={style.education}>
           <h2 className={style.sectionTitle}>
-            Éducation <i className="fas fa-graduation-cap" />
+            Éducation <i className={"fas fa-graduation-cap"} style={{ color: '#00b894' }} />
           </h2>
           <div className={style.educationList}>
             <div className={style.educationItem}>
-              <i className="fas fa-laptop-code" />
+            <i className={"fas fa-laptop-code"} style={{ color: '#00b894' }} />
               <div>
                 <h3>Formation Développeur Web et Web Mobile</h3>
                 <p>Wild Code School / Bootcamp - 2024-2025 (Bac+2)</p>
               </div>
             </div>
             <div className={style.educationItem}>
-              <i className="fas fa-graduation-cap" />
+              <i className={"fas fa-graduation-cap"} style={{ color: '#e17055' }} />
               <div>
                 <h3>Bac Professionnel - Technicien Conseil et Vente</h3>
                 <p>2019-2022</p>
               </div>
             </div>
             <div className={style.educationItem}>
-              <i className="fas fa-leaf" />
+              <i className={ "fas fa-leaf "} style={{ color: '#55efc4' }} />
               <div>
                 <h3>BEP</h3>
                 <p>Lycée Agricole de Saint-Gaudens - 2019-2021</p>
