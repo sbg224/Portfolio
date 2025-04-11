@@ -63,7 +63,7 @@ function RecentProjets() {
         
         {/* Liste des projets */}
         <ul className={style.recentPUl}>
-          {projetsToShow.map((projet, index) => (
+          {projetsToShow.map((projet) => (
             <li ref={carouselRef} className={style.projectCard} key={projet.id}>
               <h3>{projet.name}</h3>
               <img
