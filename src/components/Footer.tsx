@@ -4,9 +4,6 @@ import style from "./Footer.module.css";
 function Footer() {
 	return (
 		<div className={style.footerG}>
-			<div className={style.contianerFooter1}>
-
-			</div>
 			<div className={style.contianerFooter2}>
 				<p>&copy; 2024 BAH Mohamed. Tous droits réservés.</p>
 				<nav className={style.navFooter}>

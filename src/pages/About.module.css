@@ -35,6 +35,16 @@
 		}
 	}
 }
+.contact{
+	display: flex;
+	flex-direction: row;
+	gap: 5rem;
+	width: 100%;
+	margin-top: 3rem;
+}
+.imgContact{
+	width: 3rem;
+}
 
 /* -------------------------------------------------------------------------- */
 /* Media Queries                               */

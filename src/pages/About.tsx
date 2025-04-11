@@ -1,87 +1,95 @@
-import { useState } from "react";
-import emailjs from "emailjs-com";
+// import { useState } from "react";
+// import emailjs from "emailjs-com";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import gamil from "../assets/gmail.png";
+import whatsApp from "../assets/whatsapp.png";
 import style from "./About.module.css";
-import Formulaire from "../components/Formulaire";
+// import Formulaire from "../components/Formulaire";
 import CV from "../assets/Mohamed bah-dev.pdf";
 
 function About() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [datas, setDatas] = useState({
-    name: "",
-    lastName: "",
-    email: "",
-    telephone: "",
-    message: "",
-  });
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [datas, setDatas] = useState({
+  //   name: "",
+  //   lastName: "",
+  //   email: "",
+  //   telephone: "",
+  //   message: "",
+  // });
+
+  const phoneNumber = "+33751044407"; // Ton numéro WhatsApp
+  const message = "Bonjour, je souhaite vous contacter via votre site.";
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    message
+  )}`;
 
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  const handleChange = (e: {
-    preventDefault: () => void;
-    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-    target: { name: any; value: any };
-  }) => {
-    e.preventDefault();
-    const { name, value } = e.target;
-    setDatas((prevDatas) => ({
-      ...prevDatas,
-      [name]: value,
-    }));
-  };
+  // const handleChange = (e: {
+  //   preventDefault: () => void;
+  //   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  //   target: { name: any; value: any };
+  // }) => {
+  //   e.preventDefault();
+  //   const { name, value } = e.target;
+  //   setDatas((prevDatas) => ({
+  //     ...prevDatas,
+  //     [name]: value,
+  //   }));
+  // };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (
-      !datas.name ||
-      !datas.lastName ||
-      !datas.email ||
-      !datas.telephone ||
-      !datas.message
-    ) {
-      alert("Tous les champs sont obligatoires");
-      return;
-    }
-    const serviceId = "service_n23khuf";
-    const templateId = "template_ch7qhh9";
-    const userId = "PYfG0AhV0bjfzSYAj";
+  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   if (
+  //     !datas.name ||
+  //     !datas.lastName ||
+  //     !datas.email ||
+  //     !datas.telephone ||
+  //     !datas.message
+  //   ) {
+  //     alert("Tous les champs sont obligatoires");
+  //     return;
+  //   }
+  //   const serviceId = "service_n23khuf";
+  //   const templateId = "template_ch7qhh9";
+  //   const userId = "PYfG0AhV0bjfzSYAj";
 
-    setIsLoading(true);
+  //   setIsLoading(true);
 
-    emailjs
-      .send(
-        serviceId,
-        templateId,
-        {
-          name: datas.name,
-          lastName: datas.lastName,
-          email: datas.email,
-          telephone: datas.telephone,
-          message: datas.message,
-        },
-        userId
-      )
-      .then(
-        (result) => {
-          alert("Formulaire soumis avec succès !");
-          console.log(result.text);
-          // Réinitialiser le formulaire
-          setIsLoading(false);
+  //   emailjs
+  //     .send(
+  //       serviceId,
+  //       templateId,
+  //       {
+  //         name: datas.name,
+  //         lastName: datas.lastName,
+  //         email: datas.email,
+  //         telephone: datas.telephone,
+  //         message: datas.message,
+  //       },
+  //       userId
+  //     )
+  //     .then(
+  //       (result) => {
+  //         alert("Formulaire soumis avec succès !");
+  //         console.log(result.text);
+  //         // Réinitialiser le formulaire
+  //         setIsLoading(false);
 
-          setDatas({
-            name: "",
-            lastName: "",
-            email: "",
-            telephone: "",
-            message: "",
-          });
-        },
-        (error) => {
-          alert("Une erreur est survenue. Essayez à nouveau.");
-          console.log(error.text);
-          setIsLoading(false);
-        }
-      );
-  };
+  //         setDatas({
+  //           name: "",
+  //           lastName: "",
+  //           email: "",
+  //           telephone: "",
+  //           message: "",
+  //         });
+  //       },
+  //       (error) => {
+  //         alert("Une erreur est survenue. Essayez à nouveau.");
+  //         console.log(error.text);
+  //         setIsLoading(false);
+  //       }
+  //     );
+  // };
 
   return (
     <>
@@ -124,14 +132,35 @@ function About() {
             <i className="fas fa-download" /> Télécharger mon CV
           </a>
         </div>
-        <div className={style.formContainer}>
+
+        <p>Vous pouvez me contacter via:</p>
+
+        <div className={style.contact}>
+          <div className={style.WhatsApp}>
+            <a href={url} target="_blank" rel="noopener noreferrer">
+              <img src={whatsApp} alt="contact" className={style.imgContact} />
+            </a>
+            <p>WhatsApp</p>
+          </div>
+          <div className={style.email}>
+            <a
+              href="mailto:sambah450@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={gamil} alt="contact" className={style.imgContact} />
+            </a>
+            <p>Gmail</p>
+          </div>
+        </div>
+        {/* <div className={style.formContainer}>
           <Formulaire
             handleChange={handleChange}
             datas={datas}
             handleSubmit={handleSubmit}
             isLoading={isLoading}
           />
-        </div>
+        </div> */}
       </div>
     </>
   );
