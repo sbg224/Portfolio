@@ -127,6 +127,9 @@
   color: #55efc4;
 }
 /* Couleurs pour les icônes */
+.tools {
+  color: #d63031;
+}
 .iconHtml { color: #e34c26; }
 .iconCss { color: #264de4; }
 .iconJs { color: #f0db4f; }

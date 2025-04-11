@@ -36,7 +36,7 @@ function Skils() {
 
         <section className={style.skills}>
           <h2 className={style.sectionTitle}>
-            Compétences <i className="fas fa-tools" />
+            Compétences <i className={`fas fa-tools ${style.tools}`} />
           </h2>
           <div className={style.skillsGrid}>
             <div className={style.skillCategory}>
