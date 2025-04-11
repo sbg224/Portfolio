@@ -1,7 +1,7 @@
-// import { useLoaderData } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { MyArryProvider } from "../context/ContextProjet";
+import { useTheme } from "../context/ThemeContext"; // Importer le contexte du thème
 import gsap from "gsap";
 import Projects from "./Projects";
 import Header from "../components/Header";
@@ -11,7 +11,7 @@ import style from "./HomePage.module.css";
 import NavBar from "../components/NavBar";
 
 function HomePage() {
-  // const projetDatas = useLoaderData();
+  const { isDarkMode } = useTheme(); // Récupérer l'état du mode sombre
 
   const buttonCarrousel1 = useRef<HTMLButtonElement>(null);
   const buttonCarrousel2 = useRef<HTMLButtonElement>(null);
@@ -35,18 +35,16 @@ function HomePage() {
     });
   }, []);
 
-  // const handleNext = () => {
-  // 	setProjetIndex((ProjetIndex) =>
-  // 		ProjetIndex === TabProjets.length - 1 ? 0 : ProjetIndex + 1,
-  // 	);
-  // };
-
-  // // Fonction pour aller au Pokémon précédent
-  // const handlePrevious = () => {
-  // 	setProjetIndex((ProjetIndex) =>
-  // 		ProjetIndex === 0 ? TabProjets.length - 1 : ProjetIndex - 1,
-  // 	);
-  // };
+  useEffect(() => {
+    const htmlElement = document.documentElement;
+    if (isDarkMode) {
+      htmlElement.classList.add("dark");
+      htmlElement.classList.remove("light");
+    } else {
+      htmlElement.classList.add("light");
+      htmlElement.classList.remove("dark");
+    }
+  }, [isDarkMode]);
 
   return (
     <div>

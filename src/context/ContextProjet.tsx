@@ -1,4 +1,5 @@
 import { createContext, useState, useContext, type ReactNode } from "react";
+import img from "../assets/fondAcceuil.png";
 
 type myProjetsType = {
 		id: number;
@@ -45,7 +46,44 @@ const TabProjets: myProjetsType [] = [
 type MyswitchContextType = {
   ProjetIndex: myProjetsType[]; // ✅ Tableau d'objets myProjetsType
   setProjetIndex: (state: myProjetsType[] | ((prevState: myProjetsType[]) => myProjetsType[])) => void;
+  recentProjets: myProjetsType[]; // ✅ Tableau d'objets myProjetsType
+  setRecentProjets: (state: myProjetsType[] | ((prevState: myProjetsType[]) => myProjetsType[])) => void;
 };
+
+
+const TabProjetsRecents: myProjetsType [] = [
+	{
+		id: 0,
+		name: "Chuko Manga - Site de vente de mangas",
+		description:
+			"Chuko Manga est un site de vente de mangas que j'ai développé dans le cadre d'un projet de groupe. J'ai été responsable de la création du formulaire de création d'annonce et aussi de l'update et de la page de détails des mangas. Ce projet m'a permis de mettre en pratique mes compétences en React, CSS, TypeScript et JavaScript pour créer une interface utilisateur attrayante et fonctionnelle. Nous avons utilisé GitHub pour la gestion du code source et la collaboration entre les membres de l'équipe.",
+		imgSrc:
+			"https://media.licdn.com/dms/image/v2/D4E22AQHUCC5kQ2EzVg/feedshare-shrink_800/feedshare-shrink_800/0/1709763419280?e=1747267200&v=beta&t=j6fyB1rR5MZdG3XwvCkL3Yuwuv7sVhXoxffetDv29yE",
+		lien: "https://github.com/WildCodeSchool/nov24-RemFR-Vert-FullStackAlchemist-G1-P3.git",
+		technologies: ["React", "JavaScript", "TypeScript", "Mysql", "Node.js"], // Lien vers le projet
+	},
+	{
+		id: 1,
+		name: "FrigoCheck - Application de gestion des courses ",
+		description:
+			"FrigoCheck est une application qui aide les ménages à gérer leurs courses alimentaires. Elle permet de créer des listes de courses, suivre les stocks en temps réel et faire un inventaire avant ou après les courses. L’objectif principal est de prévenir les dépenses inutiles et d’éviter le surstockage en aidant l’utilisateur à mieux anticiper ses besoins et réduire le gaspillage.",
+		imgSrc:
+			img,
+		lien: "https://github.com/sbg224/Frigocheck-Front.git", // Lien vers le projet
+		technologies: ["React", "CSS", "JavaScript", "TypeScript", "node.js", "Mysql"],
+	},
+	{
+		id: 2,
+		name: "Portfolio - Développeur Web et Web Mobile",
+		description:
+			"Mon portfolio présente mes compétences et projets en développement web et web mobile. Réalisé avec HTML, CSS, JavaScript et React, il inclut une présentation de mes réalisations, mes compétences techniques et une page de contact. Ce projet met en avant ma capacité à créer un site web complet et fonctionnel. ",
+		imgSrc:
+			"https://img.freepik.com/photos-gratuite/belle-fleur-unique-gouttelettes-eau-refletant-couleurs-generees-par-ia_188544-15542.jpg?ga=GA1.1.2058682870.1734466195&semt=ais_hybrid",
+		lien: "https://portfolio-pied-kappa-95.vercel.app/", // Lien vers le projet
+		technologies: ["React", "CSS", "JavaScript", "TypeScript", "GSAP"],
+	},
+];
+
 
 // Créer le contexte avec une valeur par défaut
 export const MyArryContext = createContext<MyswitchContextType | undefined>(undefined);
@@ -53,22 +91,24 @@ export const MyArryContext = createContext<MyswitchContextType | undefined>(unde
 // Provider pour fournir l'état du contexte
 export const MyArryProvider = ({ children }: { children: ReactNode }) => {
   const [ProjetIndex, setProjetIndex] = useState<myProjetsType[]>(TabProjets); // ✅ Un tableau vide d'objets ProjetType
+  const [recentProjets, setRecentProjets] = useState<myProjetsType[]>(TabProjetsRecents); // ✅ Un tableau vide d'objets ProjetType
 
   return (
-    <MyArryContext.Provider value={{ ProjetIndex, setProjetIndex }}>
+    <MyArryContext.Provider value={{ ProjetIndex, setProjetIndex, recentProjets, setRecentProjets	 }}>
       {children}
     </MyArryContext.Provider>
   );
 };
-export const MyArryProvider2 = ({ children }: { children: ReactNode }) => {
-  const [ProjetIndex, setProjetIndex] = useState<myProjetsType[]>(TabProjets); // ✅ Un tableau vide d'objets ProjetType
 
-  return (
-    <MyArryContext.Provider value={{ ProjetIndex, setProjetIndex }}>
-      {children}
-    </MyArryContext.Provider>
-  );
-};
+// export const MyArryProvider2 = ({ children }: { children: ReactNode }) => {
+//   const [ProjetIndex, setProjetIndex] = useState<myProjetsType[]>(TabProjets); // ✅ Un tableau vide d'objets ProjetType
+
+//   return (
+//     <MyArryContext.Provider value={{ ProjetIndex, setProjetIndex }}>
+//       {children}
+//     </MyArryContext.Provider>
+//   );
+// };
 
 // Hook personnalisé pour utiliser le contexte
 export const useMyswitch = (): MyswitchContextType => {

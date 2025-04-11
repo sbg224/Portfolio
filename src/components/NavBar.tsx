@@ -1,23 +1,10 @@
 import { Link as ScrollLink } from "react-scroll";
-// import { ShowModeContext } from "../context/ShowModeContext";
-// import { FaBars, FaTimes } from "react-icons/fa";
-// import { useContext } from "react";
+import { useTheme } from "../context/ThemeContext"; // Utilisation du contexte global
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import style from "./NavBar.module.css";
 
-// type myType = {
-// 	showNav: boolean;
-// }
-
 function NavBar() {
-  // const { showNav, setShowNav } = useContext(ShowModeContext);
-
-
-
-  // Fonction pour gérer l'affichage de la navigation
-  // const handleShow = () => {
-  //   setShowNav(!showNav); // Inverser la valeur de showNav
-  // };
+  const { isDarkMode, toggleTheme } = useTheme(); // Récupération du contexte global
 
   return (
     <div>
@@ -48,7 +35,7 @@ function NavBar() {
             duration={500}
             className={style.buttonLink}
           >
-            skills
+            Skills
           </ScrollLink>
           <ScrollLink
             to="contact"
@@ -86,6 +73,19 @@ function NavBar() {
           </li>
         </ul>
       </nav>
+      <div>
+        <button
+          type="button"
+          className={style.themeButton}
+          onClick={toggleTheme} // Utilisation de toggleTheme pour changer le thème
+        >
+          {isDarkMode ? (
+            <i className="fas fa-sun" title="Passer au mode clair" />
+          ) : (
+            <i className="fas fa-moon" title="Passer au mode sombre" />
+          )}
+        </button>
+      </div>
     </div>
   );
 }

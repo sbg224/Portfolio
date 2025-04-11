@@ -11,7 +11,7 @@
 .recentPG h2 {
   text-align: center;
   font-size: 2rem;
-  color: #333;
+  color: var(--text-color);
   margin-bottom: 1.5rem;
 }
 
@@ -44,9 +44,9 @@
   flex-direction: column;
   justify-content: space-between;
   width: 300px; /* Largeur fixe pour chaque carte */
-  border: 1px solid #eee;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: var(--background-color);
   box-sizing: border-box;
   flex-shrink: 0;
   scroll-snap-align: start;
@@ -66,7 +66,7 @@
   font-size: 1.2rem;
   padding: 1rem;
   margin-bottom: 0;
-  color: #333;
+  color: var(--text-color);
 }
 
 .projectImage {
@@ -85,7 +85,7 @@
 
 .projectTechnologies {
   font-size: 0.8rem;
-  color: #777;
+  color: var(--secondary-color);
 }
 
 .descriptionContainer {
@@ -95,7 +95,7 @@
 
 .projetDescription {
   font-size: 0.9rem;
-  color: #555;
+  color: var(--text-color);
   margin-bottom: 0.5rem;
   max-height: 70px; /* Hauteur initiale de la description */
   overflow: hidden;
@@ -109,7 +109,7 @@
 .seeMoreButton {
   background: none;
   border: none;
-  color: #007bff;
+  color: var(--primary-color);
   cursor: pointer;
   font-size: 0.8rem;
   padding: 0;
@@ -122,8 +122,8 @@
 .projetLink {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background-color: #ffffff;
-  color: black;
+  background-color: var(--background-color);
+  color: var(--text-color);
   text-decoration: none;
   border-radius: 5px;
   font-size: 0.9rem;
@@ -139,13 +139,13 @@
   left: 0;
   width: 0;
   height: 100%;
-  background-color: #26474e;
+  background-color: var(--primary-color);
   transition: width 0.3s ease-in-out;
   z-index: -1;
 }
 
 .projetLink:hover {
-  color: white;
+  color: var(--background-color);
 }
 
 .projetLink:hover::after {
@@ -156,7 +156,7 @@
   background: none;
   border: none;
   font-size: 1.5rem;
-  color: #555;
+  color: var(--secondary-color);
   cursor: pointer;
   padding: 0.5rem;
   z-index: 10;
@@ -167,7 +167,7 @@
 }
 
 .carouselButton:hover {
-  color: #007bff;
+  color: var(--primary-color);
 }
 
 .carouselButton.prev {
@@ -180,7 +180,7 @@
 
 .carouselDots {
   position: absolute;
-  bottom: .0rem;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -188,7 +188,7 @@
 }
 
 .carouselDot {
-  background-color: #ccc;
+  background-color: var(--border-color);
   border: none;
   width: 0.8rem;
   height: 0.8rem;
@@ -198,7 +198,7 @@
 }
 
 .carouselDot.active {
-  background-color: #007bff;
+  background-color: var(--primary-color);
 }
 
 @media (max-width: 768px) {

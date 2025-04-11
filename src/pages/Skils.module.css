@@ -5,7 +5,7 @@
   width: 80%;
   margin: 2rem auto;
   padding: 2rem;
-  /* background-color: #f8f8f8; */
+  background-color: var(--background-color); /* Utilisation de la variable pour le background */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -15,8 +15,8 @@
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
-  color: #333;
-  border-bottom: 2px solid #ddd;
+  color: var(--text-color); /* Utilisation de la variable pour le texte */
+  border-bottom: 2px solid var(--border-color); /* Utilisation de la variable pour la bordure */
   padding-bottom: 0.5rem;
 }
 
@@ -32,18 +32,19 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  border-bottom: 1px solid #eee;
-	transform: scale(1);
-	transition: transform 0.3s ease-in-out;
-	&:hover {
-		transform: scale(1.05);
-		border-bottom: solid 1px #26474e;
-	}
+  border-bottom: 1px solid var(--border-color); /* Utilisation de la variable pour la bordure */
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.educationItem:hover {
+  transform: scale(1.05);
+  border-bottom: solid 1px var(--primary-color); /* Bordure sur hover */
 }
 
 .educationItem i {
   font-size: 1.5rem;
-  color: #555;
+  color: #555; /* Les icônes restent inchangées */
   width: 2rem;
   text-align: center;
 }
@@ -51,12 +52,12 @@
 .educationItem h3 {
   font-size: 1.2rem;
   margin-bottom: 0.2rem;
-  color: #444;
+  color: var(--text-color); /* Utilisation de la variable pour le texte */
 }
 
 .educationItem p {
   font-size: 0.9rem;
-  color: #777;
+  color: var(--secondary-color); /* Texte secondaire */
 }
 
 /* Styles for Skills Section */
@@ -69,22 +70,23 @@
 
 .skillCategory {
   padding: 1.5rem;
-  border: 1px solid #eee;
+  border: 1px solid var(--border-color); /* Utilisation de la variable pour la bordure */
   border-radius: 8px;
-  background-color: #fff;
+  background-color: var(--background-color); /* Utilisation de la variable pour le background */
   transform: scale(1);
-	transition: transform 0.3s ease-in-out;
-	&:hover {
-		transform: scale(1.05);
-	}	
+  transition: transform 0.3s ease-in-out;
+}
+
+.skillCategory:hover {
+  transform: scale(1.05);
 }
 
 .skillCategory h3 {
   font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: #333;
-  border-bottom: 1px solid #ddd;
+  color: var(--text-color); /* Utilisation de la variable pour le texte */
+  border-bottom: 1px solid var(--border-color); /* Utilisation de la variable pour la bordure */
   padding-bottom: 0.5rem;
 }
 
@@ -94,7 +96,7 @@
   gap: 0.5rem;
   margin-bottom: 0.8rem;
   font-size: 1rem;
-  color: #555;
+  color: var(--secondary-color); /* Texte secondaire */
 }
 
 .skill i {

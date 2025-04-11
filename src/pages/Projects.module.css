@@ -4,6 +4,7 @@
 	margin: 2rem auto;
 	font-family: var(--font-family);
 }
+
 /* css des sections */
 .sectionProjet {
 	list-style: none;
@@ -11,8 +12,8 @@
 	justify-content: space-between;
 	align-items: center;
 	gap: 2rem;
-	border-top: solid 1px;
-	background: rgba(255, 0, 0, 0);
+	border-top: solid 2px var(--border-color); /* Bordure plus visible */
+	background: rgba(255, 0, 0, 0); /* Peut être remplacé par une variable si nécessaire */
 	backdrop-filter: blur(40px);
 	width: 100%;
 	margin: 3rem auto;
@@ -45,6 +46,7 @@
 	transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 	transform-origin: left;
 	backface-visibility: hidden;
+	color: var(--text-color);
 }
 
 .divContaiteur .listImgSrc {
@@ -58,7 +60,7 @@
 	transform: scale(0.8) translateX(20px);
 	transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 	backface-visibility: hidden;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Peut être remplacé par une variable */
 }
 
 .divContaiteur:hover h3 {
@@ -75,13 +77,13 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: none;
+	border: 2px solid var(--border-color); /* Bordure plus visible */
 	border-radius: 100%;
 	height: 120px;
 	width: 120px;
 	transform: scale(1);
 	background: transparent;
-	color: #000;
+	color: var(--text-color);
 	opacity: 0.8;
 	position: relative;
 	overflow: hidden;
@@ -106,7 +108,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #26474e;
+	background: var(--primary-color);
 	transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -114,10 +116,11 @@
 	opacity: 1;
 	transform: scale(1.1);
 	backdrop-filter: blur(6px);
+	border-color: var(--primary-color); /* Bordure plus visible au survol */
 }
 
 .viewDiv:hover a {
-	color: white;
+	color: var(--background-color);
 }
 
 .viewDiv:hover::before {
@@ -139,100 +142,100 @@
 /* responsive */
 /* @media (max-width: 1250px) {
 	.projetList {
-		display: flex;
-		flex-direction: column;
+			display: flex;
+			flex-direction: column;
 	}
 	.listImgSrc {
-		width: 100%;
-		max-width: 500px;
-		border-radius: 8px;
+			width: 100%;
+			max-width: 500px;
+			border-radius: 8px;
 	}
 	.sectionProjet {
-		padding: 3rem 1rem;
+			padding: 3rem 1rem;
 	}
 	.viewDiv {
-		height: 100px;
-		width: 100px;
-		margin-right: 1rem;
+			height: 100px;
+			width: 100px;
+			margin-right: 1rem;
 	}
 } */
- /* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
 /* Media Queries                               */
 /* -------------------------------------------------------------------------- */
 
 /* Pour les écrans de taille tablette (max-width: 1024px) */
 @media (max-width: 1024px) {
-  .sectionProjet {
-    flex-direction: column; /* Empiler les éléments */
-    align-items: flex-start; /* Aligner à gauche */
-    padding: 2rem 1rem;
-    margin: 2rem auto;
-    gap: 1.5rem;
-    min-height: auto; /* Ajuster la hauteur automatiquement */
-  }
+.sectionProjet {
+	flex-direction: column; /* Empiler les éléments */
+	align-items: flex-start; /* Aligner à gauche */
+	padding: 2rem 1rem;
+	margin: 2rem auto;
+	gap: 1.5rem;
+	min-height: auto; /* Ajuster la hauteur automatiquement */
+}
 
-  .divContaiteur {
-		flex-direction: column;
-    width: 100%; /* Pleine largeur */
-    padding: 1rem 0;
-  }
+.divContaiteur {
+			flex-direction: column;
+	width: 100%; /* Pleine largeur */
+	padding: 1rem 0;
+}
 
-  .divContaiteur h3 {
-    font-size: 28px;
-    width: 100%; /* Pleine largeur */
-    position: static; /* Positionnement normal */
-    transform: none !important; /* Annuler les transformations */
-    opacity: 1 !important; /* Afficher toujours */
-  }
+.divContaiteur h3 {
+	font-size: 28px;
+	width: 100%; /* Pleine largeur */
+	position: static; /* Positionnement normal */
+	transform: none !important; /* Annuler les transformations */
+	opacity: 1 !important; /* Afficher toujours */
+}
 
-  .divContaiteur .listImgSrc {
-    width: 100%;
-    max-width: 100%; /* Pleine largeur */
-    height: auto;
-    max-height: none; /* Pas de hauteur maximale */
-    position: static; /* Positionnement normal */
-    opacity: 1 !important; /* Afficher toujours */
-    transform: none !important; /* Annuler les transformations */
-    margin-top: 1rem; /* Espace au-dessus de l'image */
-  }
+.divContaiteur .listImgSrc {
+	width: 100%;
+	max-width: 100%; /* Pleine largeur */
+	height: auto;
+	max-height: none; /* Pas de hauteur maximale */
+	position: static; /* Positionnement normal */
+	opacity: 1 !important; /* Afficher toujours */
+	transform: none !important; /* Annuler les transformations */
+	margin-top: 1rem; /* Espace au-dessus de l'image */
+}
 
-  .viewDiv {
-    height: 100px;
-    width: 100px;
-    margin-right: 0; /* Pas de marge à droite */
-    margin-top: 1rem; /* Espace en dessous de l'image */
-  }
+.viewDiv {
+	height: 100px;
+	width: 100px;
+	margin-right: 0; /* Pas de marge à droite */
+	margin-top: 1rem; /* Espace en dessous de l'image */
+}
 }
 
 /* Pour les écrans de taille mobile (max-width: 768px) */
 @media (max-width: 768px) {
-  .projetG {
-    width: 95%; /* Plus de largeur sur mobile */
-  }
+.projetG {
+	width: 95%; /* Plus de largeur sur mobile */
+}
 
-  .sectionProjet {
-    padding: 1.5rem 0.5rem;
-    margin: 1.5rem auto;
-  }
+.sectionProjet {
+	padding: 1.5rem 0.5rem;
+	margin: 1.5rem auto;
+}
 
-  .divContaiteur h3 {
-    font-size: 24px;
-  }
+.divContaiteur h3 {
+	font-size: 24px;
+}
 
-  .viewDiv {
-    height: 80px;
-    width: 80px;
-  }
+.viewDiv {
+	height: 80px;
+	width: 80px;
+}
 
-  .viewDiv a {
-    font-size: 1rem;
-  }
+.viewDiv a {
+	font-size: 1rem;
+}
 }
 
 /* Pour les écrans très petits (max-width: 480px) */
 @media (max-width: 480px) {
-  .divContaiteur h3 {
-    font-size: 20px;
-  }
+.divContaiteur h3 {
+	font-size: 20px;
 }
-
+}

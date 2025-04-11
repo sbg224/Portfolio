@@ -59,7 +59,7 @@ function Projects() {
             ease: "power3.out",
             scrollTrigger: {
               trigger: section,
-              start: "top 80%",
+              start: "top 90%",
               end: "bottom 20%",
               toggleActions: "play none none reverse",
               // markers: true,

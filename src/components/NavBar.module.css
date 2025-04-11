@@ -86,9 +86,43 @@
 			rgba(163, 255, 102, 0.6);
 	}
 }
-/* .buttonBurger {
-	display: none;
-} */
+
+.ulNav {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	justify-content: center;
+	align-items: center;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	li {
+		cursor: pointer;
+	}
+	li:hover {
+		color: #fff;
+	}
+}
+
+.themeButton {
+	position: fixed;
+	background-color: transparent;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-size: 1rem;
+	transition: all 0.3s ease-in-out;
+	z-index: 9999;
+	right: 10rem;
+	width: 50px;
+	top: 1rem;
+}
+
+.themeButton:hover {
+	opacity: 0.8;
+}
+
+/* -------------------------------------------------------------------------- */
 
 /* pour les ecrans de taille moyennes */
 @media (max-width: 890px) {
@@ -122,6 +156,10 @@
 	}
 	.buttonLink{
 		font-size: 14px;
+	}
+	.themeButton {
+		right: 1rem;
+		top: 1rem;
 	}
 
 }

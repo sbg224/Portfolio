@@ -7,14 +7,27 @@
 
 /* Définition des couleurs et dégradés pour les deux thèmes */
 :root {
-	--background-color: white;
-	--text-color: #fff;
-	--font-family: "Dennis Sans", sans-serif;
-	--gradient-light: linear-gradient(to bottom, #fff, transparent 100%);
-	--gradient-dark: linear-gradient(to bottom, #303030, transparent 100%);
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #26474e;
+  --secondary-color: #6c757d;
+  --border-color: #dddddd;
+  --font-family: "Dennis Sans", sans-serif;
+  --gradient-light: linear-gradient(to bottom, #fff, transparent 100%);
+  --gradient-dark: linear-gradient(to bottom, #303030, transparent 100%);
+}
+
+html.dark {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --primary-color: #1e90ff;
+  --secondary-color: #aaaaaa;
+  --border-color: #333333;
 }
 
 body {
-	background-color: #ffffff;
-	/* height: 100%; */
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  transition: background-color 0.3s ease, color 0.3s ease; /* Ajout d'une transition pour un effet fluide */
 }

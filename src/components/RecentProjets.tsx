@@ -10,9 +10,9 @@ function RecentProjets() {
       "Le contexte MyArryContext doit être utilisé dans un MyArryProvider"
     );
   }
-  const { ProjetIndex } = myProjetsContext;
-  const projetsToShow = ProjetIndex.slice(0, 4);
-  const carouselRef = useRef<HTMLUListElement>(null);
+  const { recentProjets } = myProjetsContext;
+  const projetsToShow = recentProjets;
+  const carouselRef = useRef<HTMLLIElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -30,13 +30,13 @@ function RecentProjets() {
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex < projetsToShow.length - 1 ? prevIndex + 1 : 0
+      prevIndex === projetsToShow.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex > 0 ? prevIndex - 1 : projetsToShow.length - 1
+      prevIndex === 0 ? projetsToShow.length - 1 : prevIndex - 1
     );
   };
 
@@ -51,6 +51,7 @@ function RecentProjets() {
     <div className={style.recentPG}>
       <h2>Mes réalisations récentes</h2>
       <div className={style.container} ref={containerRef}>
+        {/* Bouton Précédent */}
         <button
           type="button"
           className={`${style.carouselButton} ${style.prev}`}
@@ -59,9 +60,11 @@ function RecentProjets() {
         >
           <i className="fas fa-chevron-left" />
         </button>
-        <ul ref={carouselRef} className={style.recentPUl}>
-          {projetsToShow.map((projet) => (
-            <li className={style.projectCard} key={projet.id}>
+        
+        {/* Liste des projets */}
+        <ul className={style.recentPUl}>
+          {projetsToShow.map((projet, index) => (
+            <li ref={carouselRef} className={style.projectCard} key={projet.id}>
               <h3>{projet.name}</h3>
               <img
                 className={style.projectImage}
@@ -76,9 +79,15 @@ function RecentProjets() {
                 )}
                 {projet.description && (
                   <div className={style.descriptionContainer}>
-                    <p className={style.projetDescription}>{projet.description.slice(0, 100)}...</p>
+                    <p className={style.projetDescription}>
+                      {projet.description.slice(0, 100)}...
+                    </p>
                     {projet.description.length > 100 && (
-                      <button type="button" className={style.seeMoreButton} onClick={handleSeeMore}>
+                      <button
+                        type="button"
+                        className={style.seeMoreButton}
+                        onClick={handleSeeMore}
+                      >
                         Voir plus
                       </button>
                     )}
@@ -98,7 +107,9 @@ function RecentProjets() {
             </li>
           ))}
         </ul>
-        {projetsToShow.length > 1 && (
+
+        {/* Dots pour la pagination */}
+        {/* {projetsToShow.length > 1 && (
           <div className={style.carouselDots}>
             {projetsToShow.map((projet, index) => (
               <button
@@ -112,7 +123,9 @@ function RecentProjets() {
               />
             ))}
           </div>
-        )}
+        )} */}
+
+        {/* Bouton Suivant */}
         <button
           type="button"
           className={`${style.carouselButton} ${style.next}`}
