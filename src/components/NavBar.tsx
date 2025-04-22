@@ -83,7 +83,7 @@ function NavBar() {
           download="Mohamed_Bah_CV.pdf"
           className={style.downloadButton}
         >
-          <i className="fas fa-download" /> Télécharger mon CV
+          <i className="fas fa-download" /> <span>Télécharger mon CV</span> 
         </a>
         <button
           type="button"

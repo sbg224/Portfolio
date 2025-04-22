@@ -23,15 +23,15 @@
 							gap: 1rem;
 							.iconinstagram {
 									font-size: 1.5rem;
-									color: var(--primary-color);
+									color: var(--text-color);
 							}
 							.iconGitHub {
 									font-size: 1.5rem;
-									color: var(--primary-color);
+									color: var(--text-color);
 							}
 							.iconlinkedin {
 									font-size: 1.5rem;
-									color: var(--primary-color);
+									color: var(--text-color);
 							}
 					}
 			}
