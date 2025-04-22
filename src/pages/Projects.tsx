@@ -6,7 +6,6 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import RecentProjets from "../components/RecentProjets";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 function Projects() {
@@ -111,6 +110,7 @@ function Projects() {
                   my portfolio
                 </iframe>
               )}
+              
             </div>
             <div className={style.viewDiv}>
               <a href={projet.lien} target="_blank" rel="noopener noreferrer">

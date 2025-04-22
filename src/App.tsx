@@ -3,6 +3,7 @@ import "./App.css";
 import { ShowProvider } from "./context/ShowModeContext";
 import { ThemeProvider } from "./context/ThemeContext";
 import Footer from "./components/Footer";
+import BackgroundText from "./components/BackgroundText";
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
 		<>
 			<ThemeProvider>
 				<ShowProvider>
+					<BackgroundText />
 					<main>
 						<Outlet />
 					</main>

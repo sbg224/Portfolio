@@ -46,7 +46,7 @@
   width: 300px; /* Largeur fixe pour chaque carte */
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  background-color: var(--background-color);
+  background-color: transparent;
   box-sizing: border-box;
   flex-shrink: 0;
   scroll-snap-align: start;
@@ -71,6 +71,7 @@
 
 .projectImage {
   width: 100%;
+  aspect-ratio: 1;
   height: auto;
   border-radius: 8px 8px 0 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

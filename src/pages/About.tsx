@@ -5,7 +5,6 @@ import gamil from "../assets/gmail.png";
 import whatsApp from "../assets/whatsapp.png";
 import style from "./About.module.css";
 // import Formulaire from "../components/Formulaire";
-import CV from "../assets/Mohamed bah-dev.pdf";
 
 function About() {
   // const [isLoading, setIsLoading] = useState(false);
@@ -124,13 +123,6 @@ function About() {
             projet professionnel, je suis prêt à relever les défis et à
             contribuer activement au succès de votre équipe.
           </p>
-          <a
-            href={CV}
-            download="Mohamed_Bah_CV.pdf"
-            className={style.downloadButton}
-          >
-            <i className="fas fa-download" /> Télécharger mon CV
-          </a>
         </div>
 
         <p>Vous pouvez me contacter via:</p>

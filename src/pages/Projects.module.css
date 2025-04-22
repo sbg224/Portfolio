@@ -15,12 +15,20 @@
 	border-top: solid 1px var(--border-color);
 	background: rgba(255, 0, 0, 0); /* Peut être remplacé par une variable si nécessaire */
 	backdrop-filter: blur(40px);
+	border-radius: 10px;
 	width: 100%;
 	margin: 3rem auto;
 	padding: 4rem 2rem;
 	position: relative;
 	overflow: hidden;
 	min-height: 300px;
+	transform: scale(1);
+	transition: all 0.3s ease-in-out;
+	&:hover {
+		transform: scale(1.05);
+		box-shadow: 0 0 15px rgba(102, 153, 255, 0.8), 0 0 25px
+			rgba(163, 255, 102, 0.6);
+	}
 }
 
 .divContaiteur {
@@ -63,9 +71,10 @@
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Peut être remplacé par une variable */
 }
 
+
 .divContaiteur:hover h3 {
 	opacity: 0;
-	transform: translateX(-20px) rotateY(-90deg);
+	/* transform: translateX(-20px) rotateY(-90deg); */
 }
 
 .divContaiteur:hover .listImgSrc {
@@ -79,8 +88,8 @@
 	justify-content: center;
 	border: none;
 	border-radius: 100%;
-	height: 120px;
-	width: 120px;
+	height: 100px;
+	width: 110px;
 	transform: scale(1);
 	background: transparent;
 	color: var(--text-color);
@@ -119,7 +128,7 @@
 }
 
 .viewDiv:hover a {
-	color: var(--background-color);
+	color: var(--text-color);
 }
 
 .viewDiv:hover::before {
@@ -137,6 +146,7 @@
 	opacity: 1;
 	transform: translateY(0);
 }
+
 
 /* responsive */
 /* @media (max-width: 1250px) {

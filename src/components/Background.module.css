@@ -1,0 +1,30 @@
+/* src/components/BackgroundText.css */
+
+.backgroundText {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 200%;
+  height: 100vh;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: -1; /* pour que ce soit derrière tout */
+  opacity: 0.05; /* transparence subtile */
+  pointer-events: none; /* pour ne pas bloquer les clics */
+}
+
+.backgroundText p {
+  font-size: 5rem;
+  font-weight: bold;
+  animation: scrollText 30s linear infinite;
+  color: var(--text-color) /* tu peux adapter */
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -5,7 +5,7 @@
   width: 80%;
   margin: 2rem auto;
   padding: 2rem;
-  background-color: var(--background-color); /* Utilisation de la variable pour le background */
+  /* background-color: var(--background-color); */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -32,14 +32,17 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem;
+  border-radius: 10px;
   border-bottom: 1px solid var(--border-color); /* Utilisation de la variable pour la bordure */
   transform: scale(1);
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .educationItem:hover {
   transform: scale(1.05);
   border-bottom: solid 1px var(--primary-color); /* Bordure sur hover */
+  box-shadow: 0 0 15px rgba(102, 153, 255, 0.8), 0 0 25px
+    rgba(163, 255, 102, 0.6);
 }
 
 .educationItem i {
@@ -72,14 +75,16 @@
   padding: 1.5rem;
   border: 1px solid var(--border-color); /* Utilisation de la variable pour la bordure */
   border-radius: 8px;
-  background-color: var(--background-color); /* Utilisation de la variable pour le background */
+  /* background-color: var(--background-color); */
   transform: scale(1);
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(102, 153, 255, 0.8), 0 0 25px
+        rgba(163, 255, 102, 0.6);
+  }
 }
 
-.skillCategory:hover {
-  transform: scale(1.05);
-}
 
 .skillCategory h3 {
   font-size: 1.3rem;

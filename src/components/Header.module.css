@@ -35,12 +35,12 @@
 
 .intro {
 	position: absolute;
-	transform: translateX(60%);
+	transform: translateX(50%);
 	top: 50%;
 	width: 50%;
 	padding: 2.5rem 0;
 	margin: 0 auto;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	font-family: var(--font-family);
 	font-weight: 100;
 	color: #fff;
@@ -48,9 +48,9 @@
 .Bienvenue {
 	font-family: var(--font-family);
 	color: #fff;
-	font-size: 10rem;
+	font-size: 6rem;
 	font-weight: 100;
-	width: 250px;
+	width: 200px;
 	position: absolute;
 	top: 30%;
 	right: 45%;
@@ -66,6 +66,7 @@
 .presHeader {
 	position: absolute;
 	top: 35%;
+	left: 3rem;
 	font-family: var(--font-family);
 	color: #fff;
 	font-size: 1.2rem;

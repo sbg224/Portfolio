@@ -1,6 +1,7 @@
 import { Link as ScrollLink } from "react-scroll";
 import { useTheme } from "../context/ThemeContext"; // Utilisation du contexte global
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import CV from "../assets/Mohamed bah-dev.pdf";
 import style from "./NavBar.module.css";
 
 function NavBar() {
@@ -52,6 +53,7 @@ function NavBar() {
             <a
               href="https://www.instagram.com/sam_bah11/profilecard/?igsh=bmw1dm45bDZmYW4y"
               rel="noopener noreferrer"
+              target="_blank"
               className={style.iconinstagram}
             >
               <i className="fab fa-instagram" />
@@ -59,6 +61,7 @@ function NavBar() {
             <a
               href="https://github.com/sbg224"
               rel="noopener noreferrer"
+              target="_blank"
               className={style.iconGitHub}
             >
               <i className="fab fa-github" />
@@ -66,6 +69,7 @@ function NavBar() {
             <a
               href="https://www.linkedin.com/in/mohamed-bah-aa38a1232/?utm"
               rel="noopener noreferrer"
+              target="_blank"
               className={style.iconlinkedin}
             >
               <i className="fab fa-linkedin-in" />
@@ -74,6 +78,13 @@ function NavBar() {
         </ul>
       </nav>
       <div>
+        <a
+          href={CV}
+          download="Mohamed_Bah_CV.pdf"
+          className={style.downloadButton}
+        >
+          <i className="fas fa-download" /> Télécharger mon CV
+        </a>
         <button
           type="button"
           className={style.themeButton}

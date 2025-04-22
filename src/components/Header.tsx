@@ -131,7 +131,7 @@ function Header() {
           opacity: 1, // Elles deviennent visibles
           y: 0,
           duration: 0.1,
-          delay: 2,
+          delay: 1.5,
           stagger: 0.1, // Décalage entre les lettres pour un effet en cascade
           ease: "power2.out", // Animation fluide
           // repeat: 1,  // Animation infinie
@@ -168,10 +168,7 @@ function Header() {
         className={style.profile}
       />
       <p className={style.intro} ref={introText}>
-        Développeur web en formation, passionné par la création de solutions
-        modernes et adaptatives. À la recherche d’une alternance pour développer
-        et appliquer mes compétences dans des environnements collaboratifs et
-        dynamiques.
+      Issu d’un parcours manuel et rigoureux, je me suis naturellement tourné vers le développement web, une passion qui allie logique et créativité. Ce métier, je le vis comme un jeu : apprendre, créer, tester, rater, recommencer… c’est là que je m’épanouis. Curieux, impliqué et déterminé, je me donne à fond dans ce que j’aime.
       </p>
       {!showHeader && (
         <div ref={pageTransit} className={style.pageTransit}>

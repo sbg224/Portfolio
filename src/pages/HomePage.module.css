@@ -3,7 +3,7 @@ html {
 }
 
 html.light {
-  --background-color: #ffffff;
+  --background-color: #fef9f6;
   --text-color: #000000;
   --primary-color: #007bff; /* Exemple : couleur principale */
   --secondary-color: #6c757d; /* Exemple : couleur secondaire */
@@ -13,7 +13,7 @@ html.light {
 }
 
 html.dark {
-  --background-color: #121212;
+  --background-color: #1c1f26;
   --text-color: #ffffff;
   --primary-color: #1e90ff;
   --secondary-color: #aaaaaa;
@@ -30,7 +30,7 @@ body {
 .section {
   scroll-margin-top: 100px;
   min-height: 100vh;
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
   color: var(--text-color);
 }
 
