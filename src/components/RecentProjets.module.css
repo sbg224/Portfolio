@@ -112,12 +112,12 @@
   border: none;
   color: var(--primary-color);
   cursor: pointer;
-  font-size: 0.8rem;
-  padding: 0;
+  font-size: 0.9rem;
+  bottom: .9rem;
   position: absolute;
   bottom: 0;
-  left: 0;
-  z-index: 1;
+  right: 5px;
+  z-index: 9999;
 }
 
 .projetLink {

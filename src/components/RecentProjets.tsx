@@ -15,18 +15,22 @@ function RecentProjets() {
   const carouselRef = useRef<HTMLLIElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [expandedProjects, setExpandedProjects] = useState<Set<number>>(new Set());
 
   useEffect(() => {
     const carousel = carouselRef.current;
-    const container = containerRef.current;
-    if (carousel && projetsToShow.length > 0 && container) {
-      gsap.to(carousel, {
-        x: `-${currentIndex * container.offsetWidth}px`,
-        duration: 0.5,
-        ease: "power2.inOut",
-      });
+    if (carousel) {
+      const projectCard = carousel.querySelector(`.${style.projectCard}`) as HTMLLIElement;
+      if (projectCard) {
+        const cardWidth = projectCard.offsetWidth;
+        gsap.to(carousel, {
+          x: `-${currentIndex * cardWidth}px`,
+          duration: 0.5,
+          ease: "power2.inOut",
+        });
+      }
     }
-  }, [currentIndex, projetsToShow.length]);
+  }, [currentIndex]);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -40,11 +44,16 @@ function RecentProjets() {
     );
   };
 
-  const handleSeeMore = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const listItem = event.currentTarget.closest(`.${style.projectCard}`);
-    if (listItem) {
-      listItem.classList.toggle(style.expanded);
-    }
+  const handleSeeMore = (projectId: number) => {
+    setExpandedProjects((prev) => {
+      const updated = new Set(prev);
+      if (updated.has(projectId)) {
+        updated.delete(projectId);
+      } else {
+        updated.add(projectId);
+      }
+      return updated;
+    });
   };
 
   return (
@@ -64,7 +73,11 @@ function RecentProjets() {
         {/* Liste des projets */}
         <ul className={style.recentPUl}>
           {projetsToShow.map((projet) => (
-            <li ref={carouselRef} className={style.projectCard} key={projet.id}>
+            <li
+              ref={carouselRef}
+              className={`${style.projectCard} ${expandedProjects.has(projet.id) ? style.expanded : ""}`}
+              key={projet.id}
+            >
               <h3>{projet.name}</h3>
               <img
                 className={style.projectImage}
@@ -80,15 +93,17 @@ function RecentProjets() {
                 {projet.description && (
                   <div className={style.descriptionContainer}>
                     <p className={style.projetDescription}>
-                      {projet.description.slice(0, 100)}...
+                      {expandedProjects.has(projet.id)
+                        ? projet.description
+                        : `${projet.description.slice(0, 100)}...`}
                     </p>
                     {projet.description.length > 100 && (
                       <button
                         type="button"
                         className={style.seeMoreButton}
-                        onClick={handleSeeMore}
+                        onClick={() => handleSeeMore(projet.id)}
                       >
-                        Voir plus
+                        {expandedProjects.has(projet.id) ? "Voir moins" : "Voir plus"}
                       </button>
                     )}
                   </div>
@@ -107,25 +122,6 @@ function RecentProjets() {
             </li>
           ))}
         </ul>
-
-        {/* Dots pour la pagination */}
-        {/* {projetsToShow.length > 1 && (
-          <div className={style.carouselDots}>
-            {projetsToShow.map((projet, index) => (
-              <button
-                type="button"
-                key={projet.id}
-                className={`${style.carouselDot} ${
-                  index === currentIndex ? style.active : ""
-                }`}
-                onClick={() => setCurrentIndex(index)}
-                aria-label={`Aller au projet ${index + 1}`}
-              />
-            ))}
-          </div>
-        )} */}
-
-        {/* Bouton Suivant */}
         <button
           type="button"
           className={`${style.carouselButton} ${style.next}`}
