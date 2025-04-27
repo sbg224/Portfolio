@@ -11,9 +11,16 @@
 			display: flex;
 			flex-direction: column;
 			gap: 0.8rem;
+			width: 50%;
+			margin: 0 auto;
 			margin: 3rem 0;
 			color: var(--text-color);
-	}
+			/* padding-left: 1rem; */
+			h2 {
+				justify-content: flex-start;
+			}
+		}
+
 
 	.formContainer {
 			margin-top: 1rem;
@@ -29,12 +36,14 @@
 	width: 100%;
 	margin-top: 3rem;
 	color: var(--text-color);
+	padding-left: 2rem;
 }
 
 .email,
 .WhatsApp {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	transform: scale(1);
 	transition: transform ease-in-out 0.2s;
 
@@ -76,13 +85,14 @@
 			margin: 1rem auto;
 			min-height: 80vh;
 			padding: 0.5rem;
+			.titleText {
+					gap: 0.5rem;
+					margin: 1rem auto;
+					color: var(--text-color);
+					width: 100%;
+			}
 	}
 
-	.titleText {
-			gap: 0.5rem;
-			margin: 1rem 0;
-			color: var(--text-color);
-	}
 
 	.formContainer {
 			margin-top: 1rem;

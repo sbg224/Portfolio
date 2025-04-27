@@ -198,7 +198,7 @@
 	}
 	.downloadButton {
 		width: 2.2rem;
-		position: absolute;
+		position: fixed;
 		right: 10%;
 
 		span {

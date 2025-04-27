@@ -44,7 +44,7 @@ function NavBar() {
             duration={500}
             className={style.buttonLink}
           >
-            Contact
+            About
           </ScrollLink>
         </div>
 
